@@ -10,11 +10,6 @@
 
 @implementation OGPangoLayout
 
-+ (OGPangoLayout*)deserializeWithContext:(OGPangoContext*)context bytes:(GBytes*)bytes flags:(PangoLayoutDeserializeFlags)flags err:(GError**)err
-{
-	return [[[OGPangoLayout alloc] initWithGObject:(GObject*)pango_layout_deserialize([context CONTEXT], bytes, flags, err)] autorelease];
-}
-
 - (instancetype)init:(OGPangoContext*)context
 {
 	self = [super initWithGObject:(GObject*)pango_layout_new([context CONTEXT])];
@@ -55,11 +50,6 @@
 - (int)baseline
 {
 	return pango_layout_get_baseline([self LAYOUT]);
-}
-
-- (void)caretPosWithIndex:(int)index strongPos:(PangoRectangle*)strongPos weakPos:(PangoRectangle*)weakPos
-{
-	pango_layout_get_caret_pos([self LAYOUT], index, strongPos, weakPos);
 }
 
 - (gint)characterCount
@@ -115,11 +105,6 @@
 - (bool)justify
 {
 	return pango_layout_get_justify([self LAYOUT]);
-}
-
-- (bool)justifyLastLine
-{
-	return pango_layout_get_justify_last_line([self LAYOUT]);
 }
 
 - (PangoLayoutLine*)line:(int)line
@@ -242,11 +227,6 @@
 	pango_layout_move_cursor_visually([self LAYOUT], strong, oldIndex, oldTrailing, direction, newIndex, newTrailing);
 }
 
-- (GBytes*)serialize:(PangoLayoutSerializeFlags)flags
-{
-	return pango_layout_serialize([self LAYOUT], flags);
-}
-
 - (void)setAlignment:(PangoAlignment)alignment
 {
 	pango_layout_set_alignment([self LAYOUT], alignment);
@@ -285,11 +265,6 @@
 - (void)setJustify:(bool)justify
 {
 	pango_layout_set_justify([self LAYOUT], justify);
-}
-
-- (void)setJustifyLastLine:(bool)justify
-{
-	pango_layout_set_justify_last_line([self LAYOUT], justify);
 }
 
 - (void)setLineSpacing:(float)factor
@@ -335,11 +310,6 @@
 - (void)setWrap:(PangoWrapMode)wrap
 {
 	pango_layout_set_wrap([self LAYOUT], wrap);
-}
-
-- (bool)writeToFileWithFlags:(PangoLayoutSerializeFlags)flags filename:(OFString*)filename err:(GError**)err
-{
-	return pango_layout_write_to_file([self LAYOUT], flags, [filename UTF8String], err);
 }
 
 - (bool)xyToIndexWithX:(int)x y:(int)y index:(int*)index trailing:(int*)trailing

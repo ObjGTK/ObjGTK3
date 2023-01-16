@@ -9,14 +9,8 @@
 #import <OGObject/OGObject.h>
 
 /**
- * A `PangoCoverage` structure is a map from Unicode characters
- * to [enum@Pango.CoverageLevel] values.
- * 
- * It is often necessary in Pango to determine if a particular
- * font can represent a particular character, and also how well
- * it can represent that character. The `PangoCoverage` is a data
- * structure that is used to represent that information. It is an
- * opaque structure with no public fields.
+ * The #PangoCoverage structure represents a map from Unicode characters
+ * to #PangoCoverageLevel. It is an opaque structure with no public fields.
  *
  */
 @interface OGPangoCoverage : OGObject
@@ -41,16 +35,17 @@
 - (PangoCoverage*)COVERAGE;
 
 /**
- * Copy an existing `PangoCoverage`.
+ * Copy an existing #PangoCoverage. (This function may now be unnecessary
+ * since we refcount the structure. File a bug if you use it.)
  *
- * @return the newly allocated `PangoCoverage`,
- *   with a reference count of one, which should be freed with
- *   [method@Pango.Coverage.unref].
+ * @return the newly allocated #PangoCoverage,
+ *               with a reference count of one, which should be freed
+ *               with pango_coverage_unref().
  */
 - (OGPangoCoverage*)copy;
 
 /**
- * Determine whether a particular index is covered by @coverage.
+ * Determine whether a particular index is covered by @coverage
  *
  * @param index the index to check
  * @return the coverage level of @coverage for character @index_.
@@ -62,7 +57,7 @@
  * value of the current coverage for the index and the coverage for
  * the corresponding index in @other.
  *
- * @param other another `PangoCoverage`
+ * @param other another #PangoCoverage
  */
 - (void)max:(OGPangoCoverage*)other;
 
@@ -75,7 +70,7 @@
 - (void)setWithIndex:(int)index level:(PangoCoverageLevel)level;
 
 /**
- * Convert a `PangoCoverage` structure into a flat binary format.
+ * Convert a #PangoCoverage structure into a flat binary format
  *
  * @param bytes location to store result (must be freed with g_free())
  * @param nbytes location to store size of result

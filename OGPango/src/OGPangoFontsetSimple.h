@@ -9,11 +9,10 @@
 @class OGPangoFont;
 
 /**
- * `PangoFontsetSimple` is a implementation of the abstract
- * `PangoFontset` base class as an array of fonts.
- * 
- * When creating a `PangoFontsetSimple`, you have to provide
- * the array of fonts that make up the fontset.
+ * #PangoFontsetSimple is a implementation of the abstract
+ * #PangoFontset base class in terms of an array of fonts,
+ * which the creator provides when constructing the
+ * #PangoFontsetSimple.
  *
  */
 @interface OGPangoFontsetSimple : OGPangoFontset
@@ -35,17 +34,15 @@
 
 /**
  * Adds a font to the fontset.
- * 
- * The fontset takes ownership of @font.
  *
- * @param font a `PangoFont`.
+ * @param font a #PangoFont.
  */
 - (void)append:(OGPangoFont*)font;
 
 /**
  * Returns the number of fonts in the fontset.
  *
- * @return the size of @fontset
+ * @return the size of @fontset.
  */
 - (int)size;
 

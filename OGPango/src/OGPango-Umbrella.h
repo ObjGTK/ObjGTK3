@@ -10,6 +10,9 @@
 // Generated classes
 #import "OGPangoContext.h"
 #import "OGPangoCoverage.h"
+#import "OGPangoEngine.h"
+#import "OGPangoEngineLang.h"
+#import "OGPangoEngineShape.h"
 #import "OGPangoFont.h"
 #import "OGPangoFontFace.h"
 #import "OGPangoFontFamily.h"

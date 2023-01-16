@@ -8,6 +8,9 @@ LIB_MINOR = 0
 
 SRCS = OGPangoContext.m \
 	OGPangoCoverage.m \
+	OGPangoEngine.m \
+	OGPangoEngineLang.m \
+	OGPangoEngineShape.m \
 	OGPangoFont.m \
 	OGPangoFontFace.m \
 	OGPangoFontFamily.m \

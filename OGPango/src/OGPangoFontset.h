@@ -11,12 +11,12 @@
 @class OGPangoFont;
 
 /**
- * A `PangoFontset` represents a set of `PangoFont` to use when rendering text.
- * 
- * A `PangoFontset` is the result of resolving a `PangoFontDescription`
- * against a particular `PangoContext`. It has operations for finding the
- * component font for a particular Unicode character, and for finding a
- * composite set of metrics for the entire fontset.
+ * A #PangoFontset represents a set of #PangoFont to use
+ * when rendering text. It is the result of resolving a
+ * #PangoFontDescription against a particular #PangoContext.
+ * It has operations for finding the component font for
+ * a particular Unicode character, and for finding a composite
+ * set of metrics for the entire fontset.
  *
  */
 @interface OGPangoFontset : OGObject
@@ -33,9 +33,7 @@
 
 /**
  * Iterates through all the fonts in a fontset, calling @func for
- * each one.
- * 
- * If @func returns %TRUE, that stops the iteration.
+ * each one. If @func returns %TRUE, that stops the iteration.
  *
  * @param func Callback function
  * @param data data to pass to the callback function
@@ -43,18 +41,20 @@
 - (void)foreachWithFunc:(PangoFontsetForeachFunc)func data:(gpointer)data;
 
 /**
- * Returns the font in the fontset that contains the best
- * glyph for a Unicode character.
+ * Returns the font in the fontset that contains the best glyph for the
+ * Unicode character @wc.
  *
  * @param wc a Unicode character
- * @return a `PangoFont`
+ * @return a #PangoFont. The caller must call
+ *          g_object_unref when finished with the font.
  */
 - (OGPangoFont*)font:(guint)wc;
 
 /**
  * Get overall metric information for the fonts in the fontset.
  *
- * @return a `PangoFontMetrics` object
+ * @return a #PangoFontMetrics object. The caller must call pango_font_metrics_unref()
+ *   when finished using the object.
  */
 - (PangoFontMetrics*)metrics;
 

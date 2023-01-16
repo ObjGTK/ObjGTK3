@@ -6,21 +6,16 @@
 
 #import "OGPangoFont.h"
 
-#import "OGPangoFontMap.h"
-#import "OGPangoContext.h"
-#import "OGPangoCoverage.h"
+#import "OGPangoEngineShape.h"
 #import "OGPangoFontFace.h"
+#import "OGPangoFontMap.h"
+#import "OGPangoCoverage.h"
 
 @implementation OGPangoFont
 
 + (void)descriptionsFreeWithDescs:(PangoFontDescription**)descs ndescs:(int)ndescs
 {
 	pango_font_descriptions_free(descs, ndescs);
-}
-
-+ (OGPangoFont*)deserializeWithContext:(OGPangoContext*)context bytes:(GBytes*)bytes err:(GError**)err
-{
-	return [[[OGPangoFont alloc] initWithGObject:(GObject*)pango_font_deserialize([context CONTEXT], bytes, err)] autorelease];
 }
 
 - (PangoFont*)FONT
@@ -36,6 +31,11 @@
 - (PangoFontDescription*)describeWithAbsoluteSize
 {
 	return pango_font_describe_with_absolute_size([self FONT]);
+}
+
+- (OGPangoEngineShape*)findShaperWithLanguage:(PangoLanguage*)language ch:(guint32)ch
+{
+	return [[[OGPangoEngineShape alloc] initWithGObject:(GObject*)pango_font_find_shaper([self FONT], language, ch)] autorelease];
 }
 
 - (OGPangoCoverage*)coverage:(PangoLanguage*)language
@@ -68,11 +68,6 @@
 	return pango_font_get_hb_font([self FONT]);
 }
 
-- (PangoLanguage**)languages
-{
-	return pango_font_get_languages([self FONT]);
-}
-
 - (PangoFontMetrics*)metrics:(PangoLanguage*)language
 {
 	return pango_font_get_metrics([self FONT], language);
@@ -81,11 +76,6 @@
 - (bool)hasChar:(gunichar)wc
 {
 	return pango_font_has_char([self FONT], wc);
-}
-
-- (GBytes*)serialize
-{
-	return pango_font_serialize([self FONT]);
 }
 
 
