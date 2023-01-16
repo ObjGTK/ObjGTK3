@@ -7,12 +7,12 @@
 #import "OGTKClipboard.h"
 
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
-#import "OGTKTextBuffer.h"
 #import <OGdk3/OGGdkDisplay.h>
+#import "OGTKTextBuffer.h"
 
 @implementation OGTKClipboard
 
-+ (OGTKClipboard*):(GdkAtom)selection
++ (OGTKClipboard*)instance:(GdkAtom)selection
 {
 	return [[[OGTKClipboard alloc] initWithGObject:(GObject*)gtk_clipboard_get(selection)] autorelease];
 }

@@ -6,8 +6,8 @@
 
 #import "OGTKHScrollbar.h"
 
-#import "OGTKAdjustment.h"
 #import "OGTKWidget.h"
+#import "OGTKAdjustment.h"
 
 @implementation OGTKHScrollbar
 

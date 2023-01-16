@@ -8,8 +8,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkDisplay;
 @class OGGdkWindow;
+@class OGGdkDisplay;
 
 /**
  * #GdkGLContext is an object representing the platform-specific
@@ -73,7 +73,21 @@
 /**
  * Functions
  */
+
+/**
+ * Clears the current #GdkGLContext.
+ * 
+ * Any OpenGL call after this function returns will be ignored
+ * until gdk_gl_context_make_current() is called.
+ *
+ */
 + (void)clearCurrent;
+
+/**
+ * Retrieves the current #GdkGLContext.
+ *
+ * @return the current #GdkGLContext, or %NULL
+ */
 + (OGGdkGLContext*)current;
 
 /**

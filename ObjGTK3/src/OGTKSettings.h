@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
@@ -59,9 +59,37 @@
 /**
  * Functions
  */
+
+/**
+ * Gets the #GtkSettings object for the default GDK screen, creating
+ * it if necessary. See gtk_settings_get_for_screen().
+ *
+ * @return a #GtkSettings object. If there is
+ * no default screen, then returns %NULL.
+ */
 + (OGTKSettings*)default;
+
+/**
+ * Gets the #GtkSettings object for @screen, creating it if necessary.
+ *
+ * @param screen a #GdkScreen.
+ * @return a #GtkSettings object.
+ */
 + (OGTKSettings*)forScreen:(OGGdkScreen*)screen;
+
+/**
+ * This function is not useful outside GTK+.
+ *
+ * @param pspec
+ */
 + (void)installProperty:(GParamSpec*)pspec;
+
+/**
+ * This function is not useful outside GTK+.
+ *
+ * @param pspec
+ * @param parser
+ */
 + (void)installPropertyParserWithPspec:(GParamSpec*)pspec parser:(GtkRcPropertyParser)parser;
 
 /**

@@ -9,10 +9,10 @@
 #import <OGObject/OGObject.h>
 
 @class OGGdkWindow;
-@class OGGdkDisplay;
 @class OGGdkCursor;
-@class OGGdkSeat;
 @class OGGdkScreen;
+@class OGGdkDisplay;
+@class OGGdkSeat;
 
 /**
  * The #GdkDevice object represents a single input device, such
@@ -31,7 +31,28 @@
 /**
  * Functions
  */
+
+/**
+ * Frees an array of #GdkTimeCoord that was returned by gdk_device_get_history().
+ *
+ * @param events an array of #GdkTimeCoord.
+ * @param nevents the length of the array.
+ */
 + (void)freeHistoryWithEvents:(GdkTimeCoord**)events nevents:(gint)nevents;
+
+/**
+ * Determines information about the current keyboard grab.
+ * This is not public API and must not be used by applications.
+ *
+ * @param display the display for which to get the grab information
+ * @param device device to get the grab information from
+ * @param grabWindow location to store current grab window
+ * @param ownerEvents location to store boolean indicating whether
+ *   the @owner_events flag to gdk_keyboard_grab() or
+ *   gdk_pointer_grab() was %TRUE.
+ * @return %TRUE if this application currently has the
+ *  keyboard grabbed.
+ */
 + (bool)grabInfoLibgtkOnlyWithDisplay:(OGGdkDisplay*)display device:(OGGdkDevice*)device grabWindow:(GdkWindow**)grabWindow ownerEvents:(gboolean*)ownerEvents;
 
 /**

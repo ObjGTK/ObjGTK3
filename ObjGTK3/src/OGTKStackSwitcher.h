@@ -6,8 +6,8 @@
 
 #import "OGTKBox.h"
 
-@class OGTKStack;
 @class OGTKWidget;
+@class OGTKStack;
 
 /**
  * The GtkStackSwitcher widget acts as a controller for a

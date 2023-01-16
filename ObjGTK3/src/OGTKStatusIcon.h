@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
-@class OGTKMenu;
 @class OGGdkScreen;
 @class OGGdkPixbuf;
+@class OGTKMenu;
 
 /**
  * The “system tray” or notification area is normally used for transient icons
@@ -57,6 +57,19 @@
 
 /**
  * Functions
+ */
+
+/**
+ * Menu positioning function to use with gtk_menu_popup()
+ * to position @menu aligned to the status icon @user_data.
+ *
+ * @param menu the #GtkMenu
+ * @param x return location for the x position
+ * @param y return location for the y position
+ * @param pushIn whether the first menu item should be offset
+ *           (pushed in) to be aligned with the menu popup position
+ *           (only useful for GtkOptionMenu).
+ * @param userData the status icon to position the menu on
  */
 + (void)positionMenuWithMenu:(OGTKMenu*)menu x:(gint*)x y:(gint*)y pushIn:(gboolean*)pushIn userData:(gpointer)userData;
 

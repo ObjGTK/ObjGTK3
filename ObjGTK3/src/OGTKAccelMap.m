@@ -33,7 +33,7 @@
 	gtk_accel_map_foreach_unfiltered(data, foreachFunc);
 }
 
-+ (OGTKAccelMap*)
++ (OGTKAccelMap*)instance
 {
 	return [[[OGTKAccelMap alloc] initWithGObject:(GObject*)gtk_accel_map_get()] autorelease];
 }

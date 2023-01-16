@@ -8,10 +8,10 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGPangoEngineShape;
-@class OGPangoFontFace;
 @class OGPangoFontMap;
+@class OGPangoFontFace;
 @class OGPangoCoverage;
+@class OGPangoEngineShape;
 
 /**
  * The #PangoFont structure is used to represent
@@ -35,6 +35,14 @@
 
 /**
  * Functions
+ */
+
+/**
+ * Frees an array of font descriptions.
+ *
+ * @param descs a pointer
+ * to an array of #PangoFontDescription, may be %NULL
+ * @param ndescs number of font descriptions in @descs
  */
 + (void)descriptionsFreeWithDescs:(PangoFontDescription**)descs ndescs:(int)ndescs;
 

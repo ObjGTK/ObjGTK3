@@ -23,6 +23,22 @@
 /**
  * Functions
  */
+
+/**
+ * Creates a new animation by asynchronously loading an image from an input stream.
+ * 
+ * For more details see gdk_pixbuf_new_from_stream(), which is the synchronous
+ * version of this function.
+ * 
+ * When the operation is finished, @callback will be called in the main thread.
+ * You can then call gdk_pixbuf_animation_new_from_stream_finish() to get the
+ * result of the operation.
+ *
+ * @param stream a #GInputStream from which to load the animation
+ * @param cancellable optional #GCancellable object, %NULL to ignore
+ * @param callback a #GAsyncReadyCallback to call when the pixbuf is loaded
+ * @param userData the data to pass to the callback function
+ */
 + (void)newFromStreamAsyncWithStream:(GInputStream*)stream cancellable:(GCancellable*)cancellable callback:(GAsyncReadyCallback)callback userData:(gpointer)userData;
 
 /**

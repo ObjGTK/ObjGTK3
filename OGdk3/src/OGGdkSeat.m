@@ -8,8 +8,8 @@
 
 #import "OGGdkDisplay.h"
 #import "OGGdkDevice.h"
-#import "OGGdkCursor.h"
 #import "OGGdkWindow.h"
+#import "OGGdkCursor.h"
 
 @implementation OGGdkSeat
 

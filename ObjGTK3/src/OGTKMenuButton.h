@@ -6,9 +6,9 @@
 
 #import "OGTKToggleButton.h"
 
-@class OGTKMenu;
 @class OGTKPopover;
 @class OGTKWidget;
+@class OGTKMenu;
 
 /**
  * The #GtkMenuButton widget is used to display a popup when clicked on.

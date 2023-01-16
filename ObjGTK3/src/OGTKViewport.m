@@ -7,8 +7,8 @@
 #import "OGTKViewport.h"
 
 #import "OGTKWidget.h"
-#import "OGTKAdjustment.h"
 #import <OGdk3/OGGdkWindow.h>
+#import "OGTKAdjustment.h"
 
 @implementation OGTKViewport
 

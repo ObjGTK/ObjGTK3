@@ -91,7 +91,19 @@
 /**
  * Functions
  */
+
+/**
+ * Get the target entry for a dragged #GtkToolItemGroup.
+ *
+ * @return the #GtkTargetEntry for a dragged group
+ */
 + (const GtkTargetEntry*)dragTargetGroup;
+
+/**
+ * Gets the target entry for a dragged #GtkToolItem.
+ *
+ * @return the #GtkTargetEntry for a dragged item.
+ */
 + (const GtkTargetEntry*)dragTargetItem;
 
 /**

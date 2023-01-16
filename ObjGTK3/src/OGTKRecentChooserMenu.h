@@ -6,8 +6,8 @@
 
 #import "OGTKMenu.h"
 
-@class OGTKWidget;
 @class OGTKRecentManager;
+@class OGTKWidget;
 
 /**
  * #GtkRecentChooserMenu is a widget suitable for displaying recently used files

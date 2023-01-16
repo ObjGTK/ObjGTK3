@@ -6,8 +6,8 @@
 
 #import "OGTKBin.h"
 
-@class OGTKWidget;
 @class OGTKAdjustment;
+@class OGTKWidget;
 
 /**
  * GtkScrolledWindow is a container that accepts a single child widget, makes

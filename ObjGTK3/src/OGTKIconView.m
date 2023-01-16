@@ -6,10 +6,10 @@
 
 #import "OGTKIconView.h"
 
-#import "OGTKTooltip.h"
 #import "OGTKCellArea.h"
-#import "OGTKCellRenderer.h"
+#import "OGTKTooltip.h"
 #import "OGTKWidget.h"
+#import "OGTKCellRenderer.h"
 
 @implementation OGTKIconView
 

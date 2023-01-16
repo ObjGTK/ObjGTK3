@@ -4,18 +4,18 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
-@class OGTKTextTagTable;
 @class OGTKTextTag;
-@class OGGdkPixbuf;
-@class OGTKTextMark;
 @class OGTKTextChildAnchor;
+@class OGTKTextTagTable;
 @class OGTKClipboard;
+@class OGTKTextMark;
+@class OGGdkPixbuf;
 
 /**
  * You may wish to begin by reading the

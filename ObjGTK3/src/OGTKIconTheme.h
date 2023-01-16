@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkWindow;
-@class OGGdkScreen;
 @class OGGdkPixbuf;
+@class OGGdkScreen;
+@class OGGdkWindow;
 @class OGTKIconInfo;
 
 /**
@@ -94,8 +94,45 @@
 /**
  * Functions
  */
+
+/**
+ * Use gtk_icon_theme_add_resource_path()
+ *     to add application-specific icons to the icon theme.
+ *
+ * @param iconName the name of the icon to register
+ * @param size the size in pixels at which to register the icon (different
+ *     images can be registered for the same icon name at different sizes.)
+ * @param pixbuf #GdkPixbuf that contains the image to use for @icon_name
+ */
 + (void)addBuiltinIconWithIconName:(OFString*)iconName size:(gint)size pixbuf:(OGGdkPixbuf*)pixbuf;
+
+/**
+ * Gets the icon theme for the default screen. See
+ * gtk_icon_theme_get_for_screen().
+ *
+ * @return A unique #GtkIconTheme associated with
+ *     the default screen. This icon theme is associated with
+ *     the screen and can be used as long as the screen
+ *     is open. Do not ref or unref it.
+ */
 + (OGTKIconTheme*)default;
+
+/**
+ * Gets the icon theme object associated with @screen; if this
+ * function has not previously been called for the given
+ * screen, a new icon theme object will be created and
+ * associated with the screen. Icon theme objects are
+ * fairly expensive to create, so using this function
+ * is usually a better choice than calling than gtk_icon_theme_new()
+ * and setting the screen yourself; by using this function
+ * a single icon theme object will be shared between users.
+ *
+ * @param screen a #GdkScreen
+ * @return A unique #GtkIconTheme associated with
+ *  the given screen. This icon theme is associated with
+ *  the screen and can be used as long as the screen
+ *  is open. Do not ref or unref it.
+ */
 + (OGTKIconTheme*)forScreen:(OGGdkScreen*)screen;
 
 /**

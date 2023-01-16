@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
@@ -37,7 +37,28 @@
 /**
  * Functions
  */
+
+/**
+ * Returns %TRUE if a property has been registered, if @pspec or
+ * @parse_func are not %NULL, the #GParamSpec and parsing function
+ * will be respectively returned.
+ *
+ * @param propertyName property name to look up
+ * @param parseFunc return location for the parse function
+ * @param pspec return location for the #GParamSpec
+ * @return %TRUE if the property is registered, %FALSE otherwise
+ */
 + (bool)lookupPropertyWithPropertyName:(OFString*)propertyName parseFunc:(GtkStylePropertyParser*)parseFunc pspec:(GParamSpec**)pspec;
+
+/**
+ * Registers a property so it can be used in the CSS file format.
+ * This function is the low-level equivalent of
+ * gtk_theming_engine_register_property(), if you are implementing
+ * a theming engine, you want to use that function instead.
+ *
+ * @param parseFunc parsing function to use, or %NULL
+ * @param pspec the #GParamSpec for the new property
+ */
 + (void)registerPropertyWithParseFunc:(GtkStylePropertyParser)parseFunc pspec:(GParamSpec*)pspec;
 
 /**

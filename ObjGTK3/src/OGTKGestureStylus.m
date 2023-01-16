@@ -6,9 +6,9 @@
 
 #import "OGTKGestureStylus.h"
 
-#import "OGTKGesture.h"
 #import <OGdk3/OGGdkDeviceTool.h>
 #import "OGTKWidget.h"
+#import "OGTKGesture.h"
 
 @implementation OGTKGestureStylus
 

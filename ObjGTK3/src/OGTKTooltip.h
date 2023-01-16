@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
@@ -58,6 +58,15 @@
 
 /**
  * Functions
+ */
+
+/**
+ * Triggers a new tooltip query on @display, in order to update the current
+ * visible tooltip, or to show/hide the current tooltip.  This function is
+ * useful to call when, for example, the state of the widget changed by a
+ * key press.
+ *
+ * @param display a #GdkDisplay
  */
 + (void)triggerTooltipQuery:(OGGdkDisplay*)display;
 

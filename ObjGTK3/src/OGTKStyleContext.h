@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkFrameClock;
-@class OGGdkWindow;
 @class OGGdkScreen;
+@class OGGdkWindow;
+@class OGGdkFrameClock;
 
 /**
  * #GtkStyleContext is an object that stores styling information affecting
@@ -78,8 +78,46 @@
 /**
  * Functions
  */
+
+/**
+ * Adds a global style provider to @screen, which will be used
+ * in style construction for all #GtkStyleContexts under @screen.
+ * 
+ * GTK+ uses this to make styling information from #GtkSettings
+ * available.
+ * 
+ * Note: If both priorities are the same, A #GtkStyleProvider
+ * added through gtk_style_context_add_provider() takes precedence
+ * over another added through this function.
+ *
+ * @param screen a #GdkScreen
+ * @param provider a #GtkStyleProvider
+ * @param priority the priority of the style provider. The lower
+ *            it is, the earlier it will be used in the style
+ *            construction. Typically this will be in the range
+ *            between %GTK_STYLE_PROVIDER_PRIORITY_FALLBACK and
+ *            %GTK_STYLE_PROVIDER_PRIORITY_USER
+ */
 + (void)addProviderForScreenWithScreen:(OGGdkScreen*)screen provider:(GtkStyleProvider*)provider priority:(guint)priority;
+
+/**
+ * Removes @provider from the global style providers list in @screen.
+ *
+ * @param screen a #GdkScreen
+ * @param provider a #GtkStyleProvider
+ */
 + (void)removeProviderForScreenWithScreen:(OGGdkScreen*)screen provider:(GtkStyleProvider*)provider;
+
+/**
+ * This function recomputes the styles for all widgets under a particular
+ * #GdkScreen. This is useful when some global parameter has changed that
+ * affects the appearance of all widgets, because when a widget gets a new
+ * style, it will both redraw and recompute any cached information about
+ * its appearance. As an example, it is used when the color scheme changes
+ * in the related #GtkSettings object.
+ *
+ * @param screen a #GdkScreen
+ */
 + (void)resetWidgets:(OGGdkScreen*)screen;
 
 /**

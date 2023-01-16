@@ -6,8 +6,8 @@
 
 #import "OGTKEntry.h"
 
-@class OGTKAdjustment;
 @class OGTKWidget;
+@class OGTKAdjustment;
 
 /**
  * A #GtkSpinButton is an ideal way to allow the user to set the value of

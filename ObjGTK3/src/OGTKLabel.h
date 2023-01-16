@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGAtk/OGAtkMisc.h>
 
-@class OGPangoLayout;
 @class OGTKWidget;
+@class OGPangoLayout;
 
 /**
  * The #GtkLabel widget displays a small amount of text. As the name

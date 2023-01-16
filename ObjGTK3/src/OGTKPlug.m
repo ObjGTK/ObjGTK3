@@ -6,8 +6,8 @@
 
 #import "OGTKPlug.h"
 
-#import "OGTKWidget.h"
 #import <OGdk3/OGGdkDisplay.h>
+#import "OGTKWidget.h"
 
 @implementation OGTKPlug
 

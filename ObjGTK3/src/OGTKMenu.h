@@ -94,6 +94,15 @@
 /**
  * Functions
  */
+
+/**
+ * Returns a list of the menus which are attached to this widget.
+ * This list is owned by GTK+ and must not be modified.
+ *
+ * @param widget a #GtkWidget
+ * @return the list
+ *     of menus attached to his widget.
+ */
 + (GList*)forAttachWidget:(OGTKWidget*)widget;
 
 /**

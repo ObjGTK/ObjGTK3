@@ -6,11 +6,11 @@
 
 #import "OGTKIconInfo.h"
 
+#import "OGTKStyleContext.h"
+#import <OGdk3/OGGdkWindow.h>
 #import "OGTKStyle.h"
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
 #import "OGTKIconTheme.h"
-#import "OGTKStyleContext.h"
-#import <OGdk3/OGGdkWindow.h>
 
 @implementation OGTKIconInfo
 

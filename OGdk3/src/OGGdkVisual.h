@@ -23,12 +23,69 @@
 /**
  * Functions
  */
+
+/**
+ * Get the visual with the most available colors for the default
+ * GDK screen. The return value should not be freed.
+ *
+ * @return best visual
+ */
 + (OGGdkVisual*)best;
+
+/**
+ * Visual selection should be done using
+ *     gdk_screen_get_system_visual() and gdk_screen_get_rgba_visual()
+ *
+ * @return best available depth
+ */
 + (gint)bestDepth;
+
+/**
+ * Visual selection should be done using
+ *     gdk_screen_get_system_visual() and gdk_screen_get_rgba_visual()
+ *
+ * @return best visual type
+ */
 + (GdkVisualType)bestType;
+
+/**
+ * Visual selection should be done using
+ *     gdk_screen_get_system_visual() and gdk_screen_get_rgba_visual()
+ *
+ * @param depth a bit depth
+ * @param visualType a visual type
+ * @return best visual with both @depth
+ *     and @visual_type, or %NULL if none
+ */
 + (OGGdkVisual*)bestWithBothWithDepth:(gint)depth visualType:(GdkVisualType)visualType;
+
+/**
+ * Get the best visual with depth @depth for the default GDK screen.
+ * Color visuals and visuals with mutable colormaps are preferred
+ * over grayscale or fixed-colormap visuals. The return value should
+ * not be freed. %NULL may be returned if no visual supports @depth.
+ *
+ * @param depth a bit depth
+ * @return best visual for the given depth
+ */
 + (OGGdkVisual*)bestWithDepth:(gint)depth;
+
+/**
+ * Visual selection should be done using
+ *     gdk_screen_get_system_visual() and gdk_screen_get_rgba_visual()
+ *
+ * @param visualType a visual type
+ * @return best visual of the given type
+ */
 + (OGGdkVisual*)bestWithType:(GdkVisualType)visualType;
+
+/**
+ * Get the system’s default visual for the default GDK screen.
+ * This is the visual for the root window of the display.
+ * The return value should not be freed.
+ *
+ * @return system visual
+ */
 + (OGGdkVisual*)system;
 
 /**

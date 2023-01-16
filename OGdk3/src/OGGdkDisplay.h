@@ -8,13 +8,13 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkAppLaunchContext;
+@class OGGdkSeat;
 @class OGGdkDevice;
+@class OGGdkWindow;
 @class OGGdkScreen;
 @class OGGdkDeviceManager;
+@class OGGdkAppLaunchContext;
 @class OGGdkMonitor;
-@class OGGdkWindow;
-@class OGGdkSeat;
 
 /**
  * #GdkDisplay objects purpose are two fold:
@@ -45,8 +45,33 @@
 /**
  * Functions
  */
+
+/**
+ * Gets the default #GdkDisplay. This is a convenience
+ * function for:
+ * `gdk_display_manager_get_default_display (gdk_display_manager_get ())`.
+ *
+ * @return a #GdkDisplay, or %NULL if
+ *   there is no default display.
+ */
 + (OGGdkDisplay*)default;
+
+/**
+ * Opens a display.
+ *
+ * @param displayName the name of the display to open
+ * @return a #GdkDisplay, or %NULL if the
+ *     display could not be opened
+ */
 + (OGGdkDisplay*)open:(OFString*)displayName;
+
+/**
+ * This symbol was never meant to be used outside
+ *   of GTK+
+ *
+ * @return the default display, if it
+ *   could be opened, otherwise %NULL.
+ */
 + (OGGdkDisplay*)openDefaultLibgtkOnly;
 
 /**

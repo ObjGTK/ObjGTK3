@@ -6,14 +6,14 @@
 
 #import "OGTKContainer.h"
 
-@class OGTKTreeSelection;
-@class OGTKTooltip;
-@class OGTKTreeViewColumn;
-@class OGTKCellRenderer;
+@class OGGdkWindow;
+@class OGTKAdjustment;
 @class OGTKEntry;
 @class OGTKWidget;
-@class OGTKAdjustment;
-@class OGGdkWindow;
+@class OGTKTreeSelection;
+@class OGTKCellRenderer;
+@class OGTKTooltip;
+@class OGTKTreeViewColumn;
 
 /**
  * Widget that displays any object that implements the #GtkTreeModel interface.

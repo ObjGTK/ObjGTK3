@@ -6,8 +6,8 @@
 
 #import "OGGdkGLContext.h"
 
-#import "OGGdkDisplay.h"
 #import "OGGdkWindow.h"
+#import "OGGdkDisplay.h"
 
 @implementation OGGdkGLContext
 

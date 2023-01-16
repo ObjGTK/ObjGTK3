@@ -8,12 +8,12 @@
 
 #import "OGGdkVisual.h"
 #import "OGGdkDisplay.h"
-#import "OGGdkFrameClock.h"
 #import "OGGdkScreen.h"
-#import "OGGdkDevice.h"
-#import "OGGdkDrawingContext.h"
-#import "OGGdkCursor.h"
 #import "OGGdkGLContext.h"
+#import "OGGdkDrawingContext.h"
+#import "OGGdkDevice.h"
+#import "OGGdkCursor.h"
+#import "OGGdkFrameClock.h"
 
 @implementation OGGdkWindow
 

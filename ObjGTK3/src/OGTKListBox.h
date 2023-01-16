@@ -7,8 +7,8 @@
 #import "OGTKContainer.h"
 
 @class OGTKListBoxRow;
-@class OGTKWidget;
 @class OGTKAdjustment;
+@class OGTKWidget;
 
 /**
  * A GtkListBox is a vertical container that contains GtkListBoxRow

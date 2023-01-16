@@ -6,12 +6,12 @@
 
 #import "OGTKTextView.h"
 
-#import "OGTKTextBuffer.h"
-#import <OGdk3/OGGdkWindow.h>
-#import "OGTKTextChildAnchor.h"
-#import "OGTKAdjustment.h"
-#import "OGTKWidget.h"
 #import "OGTKTextMark.h"
+#import <OGdk3/OGGdkWindow.h>
+#import "OGTKWidget.h"
+#import "OGTKTextChildAnchor.h"
+#import "OGTKTextBuffer.h"
+#import "OGTKAdjustment.h"
 
 @implementation OGTKTextView
 

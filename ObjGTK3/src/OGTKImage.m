@@ -6,9 +6,9 @@
 
 #import "OGTKImage.h"
 
+#import "OGTKWidget.h"
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
 #import <OGGdkPixbuf/OGGdkPixbufAnimation.h>
-#import "OGTKWidget.h"
 
 @implementation OGTKImage
 

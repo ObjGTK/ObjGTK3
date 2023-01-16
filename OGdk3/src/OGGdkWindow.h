@@ -10,12 +10,12 @@
 
 @class OGGdkVisual;
 @class OGGdkDisplay;
-@class OGGdkFrameClock;
 @class OGGdkScreen;
-@class OGGdkDevice;
-@class OGGdkDrawingContext;
-@class OGGdkCursor;
 @class OGGdkGLContext;
+@class OGGdkDrawingContext;
+@class OGGdkDevice;
+@class OGGdkCursor;
+@class OGGdkFrameClock;
 
 @interface OGGdkWindow : OGObject
 {
@@ -25,9 +25,66 @@
 /**
  * Functions
  */
+
+/**
+ * Obtains the window underneath the mouse pointer, returning the
+ * location of that window in @win_x, @win_y. Returns %NULL if the
+ * window under the mouse pointer is not known to GDK (if the window
+ * belongs to another application and a #GdkWindow hasn’t been created
+ * for it with gdk_window_foreign_new())
+ * 
+ * NOTE: For multihead-aware widgets or applications use
+ * gdk_display_get_window_at_pointer() instead.
+ *
+ * @param winX return location for origin of the window under the pointer
+ * @param winY return location for origin of the window under the pointer
+ * @return window under the mouse pointer
+ */
 + (OGGdkWindow*)atPointerWithWinX:(gint*)winX winY:(gint*)winY;
+
+/**
+ * Constrains a desired width and height according to a
+ * set of geometry hints (such as minimum and maximum size).
+ *
+ * @param geometry a #GdkGeometry structure
+ * @param flags a mask indicating what portions of @geometry are set
+ * @param width desired width of window
+ * @param height desired height of the window
+ * @param newWidth location to store resulting width
+ * @param newHeight location to store resulting height
+ */
 + (void)constrainSizeWithGeometry:(GdkGeometry*)geometry flags:(GdkWindowHints)flags width:(gint)width height:(gint)height newWidth:(gint*)newWidth newHeight:(gint*)newHeight;
+
+/**
+ * Calls gdk_window_process_updates() for all windows (see #GdkWindow)
+ * in the application.
+ *
+ */
 + (void)processAllUpdates;
+
+/**
+ * With update debugging enabled, calls to
+ * gdk_window_invalidate_region() clear the invalidated region of the
+ * screen to a noticeable color, and GDK pauses for a short time
+ * before sending exposes to windows during
+ * gdk_window_process_updates().  The net effect is that you can see
+ * the invalid region for each window and watch redraws as they
+ * occur. This allows you to diagnose inefficiencies in your application.
+ * 
+ * In essence, because the GDK rendering model prevents all flicker,
+ * if you are redrawing the same region 400 times you may never
+ * notice, aside from noticing a speed problem. Enabling update
+ * debugging causes GTK to flicker slowly and noticeably, so you can
+ * see exactly what’s being redrawn when, in what order.
+ * 
+ * The --gtk-debug=updates command line option passed to GTK+ programs
+ * enables this debug option at application startup time. That's
+ * usually more useful than calling gdk_window_set_debug_updates()
+ * yourself, though you might want to use this function to enable
+ * updates sometime after application startup time.
+ *
+ * @param setting %TRUE to turn on update debugging
+ */
 + (void)setDebugUpdates:(bool)setting;
 
 /**

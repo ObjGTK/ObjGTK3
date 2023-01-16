@@ -6,8 +6,8 @@
 
 #import "OGTKToolButton.h"
 
-@class OGTKWidget;
 @class OGTKToolItem;
+@class OGTKWidget;
 
 /**
  * A #GtkMenuToolButton is a #GtkToolItem that contains a button and

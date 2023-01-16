@@ -25,6 +25,20 @@
 /**
  * Functions
  */
+
+/**
+ * Converts a color from HSV space to RGB.
+ * 
+ * Input values must be in the [0.0, 1.0] range;
+ * output values will be in the same range.
+ *
+ * @param h Hue
+ * @param s Saturation
+ * @param v Value
+ * @param r Return value for the red component
+ * @param g Return value for the green component
+ * @param b Return value for the blue component
+ */
 + (void)toRgbWithH:(gdouble)h s:(gdouble)s v:(gdouble)v r:(gdouble*)r g:(gdouble*)g b:(gdouble*)b;
 
 /**

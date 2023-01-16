@@ -24,14 +24,144 @@
 /**
  * Functions
  */
+
+/**
+ * Calculates the rowstride that an image created with those values would
+ * have. This is useful for front-ends and backends that want to sanity
+ * check image values without needing to create them.
+ *
+ * @param colorspace Color space for image
+ * @param hasAlpha Whether the image should have transparency information
+ * @param bitsPerSample Number of bits per color sample
+ * @param width Width of image in pixels, must be > 0
+ * @param height Height of image in pixels, must be > 0
+ * @return the rowstride for the given values, or -1 in case of error.
+ */
 + (gint)calculateRowstrideWithColorspace:(GdkColorspace)colorspace hasAlpha:(bool)hasAlpha bitsPerSample:(int)bitsPerSample width:(int)width height:(int)height;
+
+/**
+ * Parses an image file far enough to determine its format and size.
+ *
+ * @param filename The name of the file to identify.
+ * @param width Return location for the width of the
+ *     image, or %NULL
+ * @param height Return location for the height of the
+ *     image, or %NULL
+ * @return A #GdkPixbufFormat describing
+ *    the image format of the file or %NULL if the image format wasn't
+ *    recognized. The return value is owned by #GdkPixbuf and should
+ *    not be freed.
+ */
 + (GdkPixbufFormat*)fileInfoWithFilename:(OFString*)filename width:(gint*)width height:(gint*)height;
+
+/**
+ * Asynchronously parses an image file far enough to determine its
+ * format and size.
+ * 
+ * For more details see gdk_pixbuf_get_file_info(), which is the synchronous
+ * version of this function.
+ * 
+ * When the operation is finished, @callback will be called in the
+ * main thread. You can then call gdk_pixbuf_get_file_info_finish() to
+ * get the result of the operation.
+ *
+ * @param filename The name of the file to identify
+ * @param cancellable optional #GCancellable object, %NULL to ignore
+ * @param callback a #GAsyncReadyCallback to call when the file info is available
+ * @param userData the data to pass to the callback function
+ */
 + (void)fileInfoAsyncWithFilename:(OFString*)filename cancellable:(GCancellable*)cancellable callback:(GAsyncReadyCallback)callback userData:(gpointer)userData;
+
+/**
+ * Finishes an asynchronous pixbuf parsing operation started with
+ * gdk_pixbuf_get_file_info_async().
+ *
+ * @param asyncResult a #GAsyncResult
+ * @param width Return location for the width of the image, or %NULL
+ * @param height Return location for the height of the image, or %NULL
+ * @param err
+ * @return A #GdkPixbufFormat describing the image
+ *    format of the file or %NULL if the image format wasn't
+ *    recognized. The return value is owned by GdkPixbuf and should
+ *    not be freed.
+ */
 + (GdkPixbufFormat*)fileInfoFinishWithAsyncResult:(GAsyncResult*)asyncResult width:(gint*)width height:(gint*)height err:(GError**)err;
+
+/**
+ * Obtains the available information about the image formats supported
+ * by GdkPixbuf.
+ *
+ * @return A list of
+ * #GdkPixbufFormats describing the supported image formats. The list should
+ * be freed when it is no longer needed, but the structures themselves are
+ * owned by #GdkPixbuf and should not be freed.
+ */
 + (GSList*)formats;
+
+/**
+ * Initalizes the gdk-pixbuf loader modules referenced by the loaders.cache
+ * file present inside that directory.
+ * 
+ * This is to be used by applications that want to ship certain loaders
+ * in a different location from the system ones.
+ * 
+ * This is needed when the OS or runtime ships a minimal number of loaders
+ * so as to reduce the potential attack surface of carefully crafted image
+ * files, especially for uncommon file types. Applications that require
+ * broader image file types coverage, such as image viewers, would be
+ * expected to ship the gdk-pixbuf modules in a separate location, bundled
+ * with the application in a separate directory from the OS or runtime-
+ * provided modules.
+ *
+ * @param path Path to directory where the loaders.cache is installed
+ * @param err
+ * @return
+ */
 + (bool)initModulesWithPath:(OFString*)path err:(GError**)err;
+
+/**
+ * Creates a new pixbuf by asynchronously loading an image from an input stream.
+ * 
+ * For more details see gdk_pixbuf_new_from_stream(), which is the synchronous
+ * version of this function.
+ * 
+ * When the operation is finished, @callback will be called in the main thread.
+ * You can then call gdk_pixbuf_new_from_stream_finish() to get the result of the operation.
+ *
+ * @param stream a #GInputStream from which to load the pixbuf
+ * @param cancellable optional #GCancellable object, %NULL to ignore
+ * @param callback a #GAsyncReadyCallback to call when the pixbuf is loaded
+ * @param userData the data to pass to the callback function
+ */
 + (void)newFromStreamAsyncWithStream:(GInputStream*)stream cancellable:(GCancellable*)cancellable callback:(GAsyncReadyCallback)callback userData:(gpointer)userData;
+
+/**
+ * Creates a new pixbuf by asynchronously loading an image from an input stream.
+ * 
+ * For more details see gdk_pixbuf_new_from_stream_at_scale(), which is the synchronous
+ * version of this function.
+ * 
+ * When the operation is finished, @callback will be called in the main thread.
+ * You can then call gdk_pixbuf_new_from_stream_finish() to get the result of the operation.
+ *
+ * @param stream a #GInputStream from which to load the pixbuf
+ * @param width the width the image should have or -1 to not constrain the width
+ * @param height the height the image should have or -1 to not constrain the height
+ * @param preserveAspectRatio %TRUE to preserve the image's aspect ratio
+ * @param cancellable optional #GCancellable object, %NULL to ignore
+ * @param callback a #GAsyncReadyCallback to call when the pixbuf is loaded
+ * @param userData the data to pass to the callback function
+ */
 + (void)newFromStreamAtScaleAsyncWithStream:(GInputStream*)stream width:(gint)width height:(gint)height preserveAspectRatio:(bool)preserveAspectRatio cancellable:(GCancellable*)cancellable callback:(GAsyncReadyCallback)callback userData:(gpointer)userData;
+
+/**
+ * Finishes an asynchronous pixbuf save operation started with
+ * gdk_pixbuf_save_to_stream_async().
+ *
+ * @param asyncResult a #GAsyncResult
+ * @param err
+ * @return %TRUE if the pixbuf was saved successfully, %FALSE if an error was set.
+ */
 + (bool)saveToStreamFinishWithAsyncResult:(GAsyncResult*)asyncResult err:(GError**)err;
 
 /**

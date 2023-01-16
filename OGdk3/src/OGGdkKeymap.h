@@ -27,7 +27,20 @@
 /**
  * Functions
  */
+
+/**
+ * Use gdk_keymap_get_for_display() instead
+ *
+ * @return the #GdkKeymap attached to the default display.
+ */
 + (OGGdkKeymap*)default;
+
+/**
+ * Returns the #GdkKeymap attached to @display.
+ *
+ * @param display the #GdkDisplay.
+ * @return the #GdkKeymap attached to @display.
+ */
 + (OGGdkKeymap*)forDisplay:(OGGdkDisplay*)display;
 
 /**

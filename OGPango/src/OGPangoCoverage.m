@@ -30,7 +30,7 @@
 	return [[[OGPangoCoverage alloc] initWithGObject:(GObject*)pango_coverage_copy([self COVERAGE])] autorelease];
 }
 
-- (PangoCoverageLevel):(int)index
+- (PangoCoverageLevel)instance:(int)index
 {
 	return pango_coverage_get([self COVERAGE], index);
 }

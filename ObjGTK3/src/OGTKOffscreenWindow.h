@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGdk3/OGGdkWindow.h>
 
-@class OGGdkPixbuf;
 @class OGTKWidget;
+@class OGGdkPixbuf;
 
 /**
  * GtkOffscreenWindow is strictly intended to be used for obtaining

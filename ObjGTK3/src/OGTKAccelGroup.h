@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
@@ -35,6 +35,15 @@
 
 /**
  * Functions
+ */
+
+/**
+ * Finds the #GtkAccelGroup to which @closure is connected;
+ * see gtk_accel_group_connect().
+ *
+ * @param closure a #GClosure
+ * @return the #GtkAccelGroup to which @closure
+ *     is connected, or %NULL
  */
 + (OGTKAccelGroup*)fromAccelClosure:(GClosure*)closure;
 

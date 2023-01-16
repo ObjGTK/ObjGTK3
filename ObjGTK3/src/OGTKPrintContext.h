@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
-@class OGTKPageSetup;
 @class OGPangoFontMap;
-@class OGPangoContext;
 @class OGPangoLayout;
+@class OGTKPageSetup;
+@class OGPangoContext;
 
 /**
  * A GtkPrintContext encapsulates context information that is required when

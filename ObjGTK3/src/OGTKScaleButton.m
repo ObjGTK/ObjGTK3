@@ -6,8 +6,8 @@
 
 #import "OGTKScaleButton.h"
 
-#import "OGTKAdjustment.h"
 #import "OGTKWidget.h"
+#import "OGTKAdjustment.h"
 
 @implementation OGTKScaleButton
 

@@ -6,8 +6,8 @@
 
 #import "OGTKDialog.h"
 
-@class OGTKWindow;
 @class OGTKWidget;
+@class OGTKWindow;
 
 /**
  * #GtkAppChooserDialog shows a #GtkAppChooserWidget inside a #GtkDialog.

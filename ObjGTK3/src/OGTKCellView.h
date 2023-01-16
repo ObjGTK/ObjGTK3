@@ -6,9 +6,9 @@
 
 #import "OGTKWidget.h"
 
+@class OGTKCellAreaContext;
 @class OGTKCellArea;
 @class OGGdkPixbuf;
-@class OGTKCellAreaContext;
 
 /**
  * A #GtkCellView displays a single row of a #GtkTreeModel using a #GtkCellArea

@@ -7,10 +7,10 @@
 #import "OGGdkDevice.h"
 
 #import "OGGdkWindow.h"
-#import "OGGdkDisplay.h"
 #import "OGGdkCursor.h"
-#import "OGGdkSeat.h"
 #import "OGGdkScreen.h"
+#import "OGGdkDisplay.h"
+#import "OGGdkSeat.h"
 
 @implementation OGGdkDevice
 

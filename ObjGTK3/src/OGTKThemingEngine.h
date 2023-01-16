@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
@@ -32,7 +32,50 @@
 /**
  * Functions
  */
+
+/**
+ * Loads and initializes a theming engine module from the
+ * standard directories.
+ *
+ * @param name Theme engine name to load
+ * @return A theming engine, or %NULL if
+ * the engine @name doesn’t exist.
+ */
 + (OGTKThemingEngine*)load:(OFString*)name;
+
+/**
+ * Registers a property so it can be used in the CSS file format,
+ * on the CSS file the property will look like
+ * "-${@name_space}-${property_name}". being
+ * ${property_name} the given to @pspec. @name_space will usually
+ * be the theme engine name.
+ * 
+ * For any type a @parse_func may be provided, being this function
+ * used for turning any property value (between “:” and “;”) in
+ * CSS to the #GValue needed. For basic types there is already
+ * builtin parsing support, so %NULL may be provided for these
+ * cases.
+ * 
+ * Engines must ensure property registration happens exactly once,
+ * usually GTK+ deals with theming engines as singletons, so this
+ * should be guaranteed to happen once, but bear this in mind
+ * when creating #GtkThemeEngines yourself.
+ * 
+ * In order to make use of the custom registered properties in
+ * the CSS file, make sure the engine is loaded first by specifying
+ * the engine property, either in a previous rule or within the same
+ * one.
+ * |[
+ * * {
+ *     engine: someengine;
+ *     -SomeEngine-custom-property: 2;
+ * }
+ * ]|
+ *
+ * @param nameSpace namespace for the property name
+ * @param parseFunc parsing function to use, or %NULL
+ * @param pspec the #GParamSpec for the new property
+ */
 + (void)registerPropertyWithNameSpace:(OFString*)nameSpace parseFunc:(GtkStylePropertyParser)parseFunc pspec:(GParamSpec*)pspec;
 
 /**

@@ -10,8 +10,8 @@
 
 @class OGGdkDisplay;
 @class OGGdkDevice;
-@class OGGdkCursor;
 @class OGGdkWindow;
+@class OGGdkCursor;
 
 /**
  * The #GdkSeat object represents a collection of input devices

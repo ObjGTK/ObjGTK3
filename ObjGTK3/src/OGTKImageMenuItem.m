@@ -6,8 +6,8 @@
 
 #import "OGTKImageMenuItem.h"
 
-#import "OGTKAccelGroup.h"
 #import "OGTKWidget.h"
+#import "OGTKAccelGroup.h"
 
 @implementation OGTKImageMenuItem
 

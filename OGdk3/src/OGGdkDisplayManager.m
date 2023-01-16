@@ -10,7 +10,7 @@
 
 @implementation OGGdkDisplayManager
 
-+ (OGGdkDisplayManager*)
++ (OGGdkDisplayManager*)instance
 {
 	return [[[OGGdkDisplayManager alloc] initWithGObject:(GObject*)gdk_display_manager_get()] autorelease];
 }

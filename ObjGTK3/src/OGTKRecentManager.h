@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
@@ -80,6 +80,14 @@
 
 /**
  * Functions
+ */
+
+/**
+ * Gets a unique instance of #GtkRecentManager, that you can share
+ * in your application without caring about memory management.
+ *
+ * @return A unique #GtkRecentManager. Do not ref or
+ *   unref it.
  */
 + (OGTKRecentManager*)default;
 

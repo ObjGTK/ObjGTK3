@@ -8,10 +8,10 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGPangoFont;
-@class OGPangoFontMap;
 @class OGPangoFontFamily;
 @class OGPangoFontset;
+@class OGPangoFontMap;
+@class OGPangoFont;
 
 /**
  * The #PangoContext structure stores global information

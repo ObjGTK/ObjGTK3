@@ -6,8 +6,8 @@
 
 #import "OGTKBin.h"
 
-@class OGTKEntry;
 @class OGTKWidget;
+@class OGTKEntry;
 
 /**
  * #GtkSearchBar is a container made to have a search entry (possibly

@@ -6,9 +6,9 @@
 
 #import "OGTKMenuButton.h"
 
-#import "OGTKMenu.h"
 #import "OGTKPopover.h"
 #import "OGTKWidget.h"
+#import "OGTKMenu.h"
 
 @implementation OGTKMenuButton
 

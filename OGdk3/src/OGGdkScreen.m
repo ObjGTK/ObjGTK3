@@ -6,9 +6,9 @@
 
 #import "OGGdkScreen.h"
 
-#import "OGGdkWindow.h"
-#import "OGGdkVisual.h"
 #import "OGGdkDisplay.h"
+#import "OGGdkVisual.h"
+#import "OGGdkWindow.h"
 
 @implementation OGGdkScreen
 

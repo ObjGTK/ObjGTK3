@@ -6,8 +6,8 @@
 
 #import "OGGdkDragContext.h"
 
-#import "OGGdkWindow.h"
 #import "OGGdkDevice.h"
+#import "OGGdkWindow.h"
 
 @implementation OGGdkDragContext
 

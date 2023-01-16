@@ -21,6 +21,14 @@
 /**
  * Functions
  */
+
+/**
+ * Gets the accessible object for the specified @obj.
+ *
+ * @param obj a #GObject
+ * @return a #AtkObject which is the accessible object for
+ * the @obj
+ */
 + (OGAtkObject*)forObject:(GObject*)obj;
 
 /**

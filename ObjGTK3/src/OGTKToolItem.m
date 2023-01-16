@@ -6,8 +6,8 @@
 
 #import "OGTKToolItem.h"
 
-#import "OGTKWidget.h"
 #import "OGTKSizeGroup.h"
+#import "OGTKWidget.h"
 
 @implementation OGTKToolItem
 

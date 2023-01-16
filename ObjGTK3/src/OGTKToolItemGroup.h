@@ -6,8 +6,8 @@
 
 #import "OGTKContainer.h"
 
-@class OGTKToolItem;
 @class OGTKWidget;
+@class OGTKToolItem;
 
 /**
  * A #GtkToolItemGroup is used together with #GtkToolPalette to add

@@ -21,6 +21,12 @@
 /**
  * Functions
  */
+
+/**
+ * Since 2.12.
+ *
+ * @return The singleton instance of AtkMisc for this application.
+ */
 + (const AtkMisc*)instance;
 
 /**

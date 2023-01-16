@@ -6,9 +6,9 @@
 
 #import "OGTKStatusIcon.h"
 
-#import "OGTKMenu.h"
 #import <OGdk3/OGGdkScreen.h>
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
+#import "OGTKMenu.h"
 
 @implementation OGTKStatusIcon
 

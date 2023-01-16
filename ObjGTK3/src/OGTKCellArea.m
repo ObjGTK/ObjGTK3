@@ -6,9 +6,9 @@
 
 #import "OGTKCellArea.h"
 
-#import "OGTKWidget.h"
-#import "OGTKCellRenderer.h"
 #import "OGTKCellAreaContext.h"
+#import "OGTKCellRenderer.h"
+#import "OGTKWidget.h"
 
 @implementation OGTKCellArea
 

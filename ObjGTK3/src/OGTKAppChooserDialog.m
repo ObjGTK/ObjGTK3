@@ -6,8 +6,8 @@
 
 #import "OGTKAppChooserDialog.h"
 
-#import "OGTKWindow.h"
 #import "OGTKWidget.h"
+#import "OGTKWindow.h"
 
 @implementation OGTKAppChooserDialog
 

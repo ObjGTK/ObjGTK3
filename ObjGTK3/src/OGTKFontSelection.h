@@ -7,8 +7,8 @@
 #import "OGTKBox.h"
 
 @class OGPangoFontFamily;
-@class OGPangoFontFace;
 @class OGTKWidget;
+@class OGPangoFontFace;
 
 @interface OGTKFontSelection : OGTKBox
 {

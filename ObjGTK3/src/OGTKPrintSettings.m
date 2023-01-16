@@ -51,7 +51,7 @@
 	gtk_print_settings_foreach([self PRINTSETTINGS], func, userData);
 }
 
-- (OFString*):(OFString*)key
+- (OFString*)instance:(OFString*)key
 {
 	return [OFString stringWithUTF8String:gtk_print_settings_get([self PRINTSETTINGS], [key UTF8String])];
 }

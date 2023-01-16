@@ -6,8 +6,8 @@
 
 #import "OGTKBuilder.h"
 
-#import "OGTKApplication.h"
 #import "OGTKWidget.h"
+#import "OGTKApplication.h"
 
 @implementation OGTKBuilder
 

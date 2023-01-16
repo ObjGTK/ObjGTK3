@@ -8,8 +8,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkPixbufAnimation;
 @class OGGdkPixbuf;
+@class OGGdkPixbufAnimation;
 
 /**
  * The GdkPixbufLoader struct contains only private

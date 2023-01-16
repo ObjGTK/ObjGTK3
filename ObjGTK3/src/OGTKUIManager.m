@@ -7,9 +7,9 @@
 #import "OGTKUIManager.h"
 
 #import "OGTKAccelGroup.h"
+#import "OGTKWidget.h"
 #import "OGTKAction.h"
 #import "OGTKActionGroup.h"
-#import "OGTKWidget.h"
 
 @implementation OGTKUIManager
 

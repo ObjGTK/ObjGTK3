@@ -16,8 +16,39 @@
 /**
  * Functions
  */
+
+/**
+ * Parses a color palette string; the string is a colon-separated
+ * list of color names readable by gdk_color_parse().
+ *
+ * @param str a string encoding a color palette
+ * @param colors return location for
+ *     allocated array of #GdkColor
+ * @param ncolors return location for length of array
+ * @return %TRUE if a palette was successfully parsed
+ */
 + (bool)paletteFromStringWithStr:(OFString*)str colors:(GdkColor**)colors ncolors:(gint*)ncolors;
+
+/**
+ * Encodes a palette as a string, useful for persistent storage.
+ *
+ * @param colors an array of colors
+ * @param ncolors length of the array
+ * @return allocated string encoding the palette
+ */
 + (OFString*)paletteToStringWithColors:(const GdkColor*)colors ncolors:(gint)ncolors;
+
+/**
+ * Installs a global function to be called whenever the user
+ * tries to modify the palette in a color selection.
+ * 
+ * This function should save the new palette contents, and update
+ * the #GtkSettings:gtk-color-palette GtkSettings property so all
+ * GtkColorSelection widgets will be modified.
+ *
+ * @param func a function to call when the custom palette needs saving
+ * @return the previous change palette hook (that was replaced)
+ */
 + (GtkColorSelectionChangePaletteWithScreenFunc)setChangePaletteWithScreenHook:(GtkColorSelectionChangePaletteWithScreenFunc)func;
 
 /**

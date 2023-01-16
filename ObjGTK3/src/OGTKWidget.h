@@ -4,31 +4,31 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
 @class OGGdkDisplay;
-@class OGGdkDragContext;
-@class OGGdkVisual;
-@class OGGdkPixbuf;
-@class OGTKAccelGroup;
-@class OGGdkScreen;
-@class OGTKStyleContext;
-@class OGPangoLayout;
+@class OGGdkDevice;
 @class OGGdkFrameClock;
+@class OGPangoContext;
+@class OGGdkScreen;
+@class OGAtkObject;
+@class OGTKSettings;
+@class OGTKRcStyle;
 @class OGTKWindow;
 @class OGGdkWindow;
-@class OGGdkDevice;
 @class OGPangoFontMap;
-@class OGTKClipboard;
-@class OGTKRcStyle;
-@class OGPangoContext;
-@class OGTKSettings;
-@class OGAtkObject;
 @class OGTKStyle;
+@class OGGdkDragContext;
+@class OGTKAccelGroup;
+@class OGPangoLayout;
+@class OGGdkVisual;
+@class OGTKStyleContext;
+@class OGTKClipboard;
+@class OGGdkPixbuf;
 
 /**
  * GtkWidget is the base class all widgets in GTK+ derive from. It manages the
@@ -420,10 +420,45 @@
 /**
  * Functions
  */
+
+/**
+ * Obtains the current default reading direction. See
+ * gtk_widget_set_default_direction().
+ *
+ * @return the current default direction.
+ */
 + (GtkTextDirection)defaultDirection;
+
+/**
+ * Use #GtkStyleContext instead, and
+ *     gtk_css_provider_get_default() to obtain a #GtkStyleProvider
+ *     with the default widget style information.
+ *
+ * @return the default style. This #GtkStyle
+ *     object is owned by GTK+ and should not be modified or freed.
+ */
 + (OGTKStyle*)defaultStyle;
+
+/**
+ * Cancels the effect of a previous call to gtk_widget_push_composite_child().
+ *
+ */
 + (void)popCompositeChild;
+
+/**
+ * This API never really worked well and was mostly unused, now
+ * we have a more complete mechanism for composite children, see gtk_widget_class_set_template().
+ *
+ */
 + (void)pushCompositeChild;
+
+/**
+ * Sets the default reading direction for widgets where the
+ * direction has not been explicitly set by gtk_widget_set_direction().
+ *
+ * @param dir the new default direction. This cannot be
+ *        %GTK_TEXT_DIR_NONE.
+ */
 + (void)setDefaultDirection:(GtkTextDirection)dir;
 
 /**

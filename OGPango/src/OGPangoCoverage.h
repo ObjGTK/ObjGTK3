@@ -28,6 +28,16 @@
 /**
  * Functions
  */
+
+/**
+ * This returns %NULL
+ *
+ * @param bytes binary data
+ *   representing a #PangoCoverage
+ * @param nbytes the size of @bytes in bytes
+ * @return a newly allocated
+ *               #PangoCoverage, or %NULL if the data was invalid.
+ */
 + (OGPangoCoverage*)fromBytesWithBytes:(guchar*)bytes nbytes:(int)nbytes;
 
 /**
@@ -57,7 +67,7 @@
  * @param index the index to check
  * @return the coverage level of @coverage for character @index_.
  */
-- (PangoCoverageLevel):(int)index;
+- (PangoCoverageLevel)instance:(int)index;
 
 /**
  * Set the coverage for each index in @coverage to be the max (better)

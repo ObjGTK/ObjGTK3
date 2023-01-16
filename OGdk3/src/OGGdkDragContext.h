@@ -8,8 +8,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkWindow;
 @class OGGdkDevice;
+@class OGGdkWindow;
 
 @interface OGGdkDragContext : OGObject
 {

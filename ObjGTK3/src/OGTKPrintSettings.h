@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
@@ -66,7 +66,7 @@
  * @param key a key
  * @return the string value for @key
  */
-- (OFString*):(OFString*)key;
+- (OFString*)instance:(OFString*)key;
 
 /**
  * Returns the boolean represented by the value

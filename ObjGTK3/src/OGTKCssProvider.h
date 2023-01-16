@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk.h>
 #include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
+#include <gtk/gtk.h>
 
 #import <OGObject/OGObject.h>
 
@@ -44,7 +44,24 @@
 /**
  * Functions
  */
+
+/**
+ * Use gtk_css_provider_new() instead.
+ *
+ * @return The provider used for fallback styling.
+ *          This memory is owned by GTK+, and you must not free it.
+ */
 + (OGTKCssProvider*)default;
+
+/**
+ * Loads a theme from the usual theme paths
+ *
+ * @param name A theme name
+ * @param variant variant to load, for example, "dark", or
+ *     %NULL for the default
+ * @return a #GtkCssProvider with the theme loaded.
+ *     This memory is owned by GTK+, and you must not free it.
+ */
 + (OGTKCssProvider*)namedWithName:(OFString*)name variant:(OFString*)variant;
 
 /**

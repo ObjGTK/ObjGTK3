@@ -6,12 +6,12 @@
 
 #import "OGTKBin.h"
 
-@class OGGdkPixbuf;
-@class OGGdkScreen;
-@class OGTKWindowGroup;
 @class OGTKApplication;
+@class OGGdkScreen;
 @class OGTKAccelGroup;
 @class OGTKWidget;
+@class OGTKWindowGroup;
+@class OGGdkPixbuf;
 
 /**
  * A GtkWindow is a toplevel window which can contain other widgets.
@@ -79,14 +79,102 @@
 /**
  * Functions
  */
+
+/**
+ * Gets the value set by gtk_window_set_default_icon_list().
+ * The list is a copy and should be freed with g_list_free(),
+ * but the pixbufs in the list have not had their reference count
+ * incremented.
+ *
+ * @return copy of default icon list
+ */
 + (GList*)defaultIconList;
+
+/**
+ * Returns the fallback icon name for windows that has been set
+ * with gtk_window_set_default_icon_name(). The returned
+ * string is owned by GTK+ and should not be modified. It
+ * is only valid until the next call to
+ * gtk_window_set_default_icon_name().
+ *
+ * @return the fallback icon name for windows
+ */
 + (OFString*)defaultIconName;
+
+/**
+ * Returns a list of all existing toplevel windows. The widgets
+ * in the list are not individually referenced. If you want
+ * to iterate through the list and perform actions involving
+ * callbacks that might destroy the widgets, you must call
+ * `g_list_foreach (result, (GFunc)g_object_ref, NULL)` first, and
+ * then unref all the widgets afterwards.
+ *
+ * @return list of toplevel widgets
+ */
 + (GList*)listToplevels;
+
+/**
+ * By default, after showing the first #GtkWindow, GTK+ calls
+ * gdk_notify_startup_complete().  Call this function to disable
+ * the automatic startup notification. You might do this if your
+ * first window is a splash screen, and you want to delay notification
+ * until after your real main window has been shown, for example.
+ * 
+ * In that example, you would disable startup notification
+ * temporarily, show your splash screen, then re-enable it so that
+ * showing the main window would automatically result in notification.
+ *
+ * @param setting %TRUE to automatically do startup notification
+ */
 + (void)setAutoStartupNotification:(bool)setting;
+
+/**
+ * Sets an icon to be used as fallback for windows that haven't
+ * had gtk_window_set_icon() called on them from a pixbuf.
+ *
+ * @param icon the icon
+ */
 + (void)setDefaultIcon:(OGGdkPixbuf*)icon;
+
+/**
+ * Sets an icon to be used as fallback for windows that haven't
+ * had gtk_window_set_icon_list() called on them from a file
+ * on disk. Warns on failure if @err is %NULL.
+ *
+ * @param filename location of icon file
+ * @param err
+ * @return %TRUE if setting the icon succeeded.
+ */
 + (bool)setDefaultIconFromFileWithFilename:(OFString*)filename err:(GError**)err;
+
+/**
+ * Sets an icon list to be used as fallback for windows that haven't
+ * had gtk_window_set_icon_list() called on them to set up a
+ * window-specific icon list. This function allows you to set up the
+ * icon for all windows in your app at once.
+ * 
+ * See gtk_window_set_icon_list() for more details.
+ *
+ * @param list a list of #GdkPixbuf
+ */
 + (void)setDefaultIconList:(GList*)list;
+
+/**
+ * Sets an icon to be used as fallback for windows that haven't
+ * had gtk_window_set_icon_list() called on them from a named
+ * themed icon, see gtk_window_set_icon_name().
+ *
+ * @param name the name of the themed icon
+ */
 + (void)setDefaultIconName:(OFString*)name;
+
+/**
+ * Opens or closes the [interactive debugger][interactive-debugging],
+ * which offers access to the widget hierarchy of the application
+ * and to useful debugging tools.
+ *
+ * @param enable %TRUE to enable interactive debugging
+ */
 + (void)setInteractiveDebugging:(bool)enable;
 
 /**
