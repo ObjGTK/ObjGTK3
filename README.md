@@ -14,3 +14,5 @@ Autogen, configure, make, make install in this order:
 3. OGdk3
 4. OGAtk
 5. ObjGTK3
+
+See [this Codeberg](https://codeberg.org/ObjGTK/ObjGTK3ExampleApp) repo for current usage and a small example app.
