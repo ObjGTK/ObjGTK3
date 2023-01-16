@@ -436,11 +436,6 @@
 - (void)destroy;
 
 /**
- *
- */
-- (void)destroyNotify;
-
-/**
  * Does nothing, present only for compatiblity.
  *
  */

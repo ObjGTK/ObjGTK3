@@ -134,11 +134,6 @@
 	gdk_window_destroy([self WINDOW]);
 }
 
-- (void)destroyNotify
-{
-	gdk_window_destroy_notify([self WINDOW]);
-}
-
 - (void)enableSynchronizedConfigure
 {
 	gdk_window_enable_synchronized_configure([self WINDOW]);
