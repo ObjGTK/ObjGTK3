@@ -7,11 +7,11 @@
 #import "OGTKBin.h"
 
 @class OGTKApplication;
-@class OGGdkScreen;
 @class OGTKAccelGroup;
 @class OGTKWidget;
-@class OGTKWindowGroup;
 @class OGGdkPixbuf;
+@class OGGdkScreen;
+@class OGTKWindowGroup;
 
 /**
  * A GtkWindow is a toplevel window which can contain other widgets.

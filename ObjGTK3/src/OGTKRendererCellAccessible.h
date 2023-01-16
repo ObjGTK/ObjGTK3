@@ -6,8 +6,8 @@
 
 #import "OGTKCellAccessible.h"
 
-@class OGAtkObject;
 @class OGTKCellRenderer;
+@class OGAtkObject;
 
 @interface OGTKRendererCellAccessible : OGTKCellAccessible
 {

@@ -4,14 +4,14 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
 #include <gtk/gtk.h>
+#include <gtk/gtk-a11y.h>
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkPixbuf;
 @class OGGdkDisplay;
+@class OGGdkPixbuf;
 @class OGTKWidget;
 
 /**

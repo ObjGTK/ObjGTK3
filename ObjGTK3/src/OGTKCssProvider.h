@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
 #include <gtk/gtk.h>
+#include <gtk/gtk-a11y.h>
 
 #import <OGObject/OGObject.h>
 
@@ -46,7 +46,8 @@
  */
 
 /**
- * Use gtk_css_provider_new() instead.
+ * Returns the provider containing the style settings used as a
+ * fallback for all widgets.
  *
  * @return The provider used for fallback styling.
  *          This memory is owned by GTK+, and you must not free it.

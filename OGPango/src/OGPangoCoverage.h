@@ -30,7 +30,8 @@
  */
 
 /**
- * This returns %NULL
+ * Convert data generated from pango_coverage_to_bytes() back
+ * to a #PangoCoverage
  *
  * @param bytes binary data
  *   representing a #PangoCoverage

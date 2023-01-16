@@ -6,8 +6,8 @@
 
 #import "OGTKGestureLongPress.h"
 
-#import "OGTKWidget.h"
 #import "OGTKGesture.h"
+#import "OGTKWidget.h"
 
 @implementation OGTKGestureLongPress
 

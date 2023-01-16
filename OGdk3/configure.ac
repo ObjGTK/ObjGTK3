@@ -53,31 +53,42 @@ AS_IF([test x"$enable_static" = x"yes" -o x"$enable_shared" = x"no"], [
 ])
 
 AC_MSG_CHECKING(for ObjFW package OGObject)
-AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)], [
+AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)
+	OGDK3_CPPFLAGS="$OGDK3_CPPFLAGS $($OBJFW_CONFIG --package OGObject --cppflags)"
+	OGDK3_LIBS="$OGDK3_LIBS $($OBJFW_CONFIG --package OGObject --libs)"
+], [
 	AC_MSG_ERROR(You need ObjFW package OGObject installed.)
 ])
 
-AC_MSG_CHECKING(for ObjFW package OGGdkPixbuf)
-AS_IF([$OBJFW_CONFIG --package OGGdkPixbuf], [AC_MSG_RESULT(yes)], [
-	AC_MSG_ERROR(You need ObjFW package OGGdkPixbuf installed.)
+AC_MSG_CHECKING(for ObjFW package OGPango)
+AS_IF([$OBJFW_CONFIG --package OGPango], [AC_MSG_RESULT(yes)
+	OGDK3_CPPFLAGS="$OGDK3_CPPFLAGS $($OBJFW_CONFIG --package OGPango --cppflags)"
+	OGDK3_LIBS="$OGDK3_LIBS $($OBJFW_CONFIG --package OGPango --libs)"
+], [
+	AC_MSG_ERROR(You need ObjFW package OGPango installed.)
 ])
 
-AC_MSG_CHECKING(for ObjFW package OGPango)
-AS_IF([$OBJFW_CONFIG --package OGPango], [AC_MSG_RESULT(yes)], [
-	AC_MSG_ERROR(You need ObjFW package OGPango installed.)
+AC_MSG_CHECKING(for ObjFW package OGGdkPixbuf)
+AS_IF([$OBJFW_CONFIG --package OGGdkPixbuf], [AC_MSG_RESULT(yes)
+	OGDK3_CPPFLAGS="$OGDK3_CPPFLAGS $($OBJFW_CONFIG --package OGGdkPixbuf --cppflags)"
+	OGDK3_LIBS="$OGDK3_LIBS $($OBJFW_CONFIG --package OGGdkPixbuf --libs)"
+], [
+	AC_MSG_ERROR(You need ObjFW package OGGdkPixbuf installed.)
 ])
 
 AC_ARG_WITH(gdk, AS_HELP_STRING([--with-gdk=PREFIX],
 	[build with gdk-3.0 in the specified prefix]))
 AS_IF([test x"$with_gdk" != x"no" -a x"$with_gdk" != x""], [
-       GDK_CPPFLAGS="$GDK_CFLAGS -I$with_gdk/include"
-       GDK_LIBS="$GDK_LIBS -L$with_gdk/lib"
-       CPPFLAGS="$CPPFLAGS -I$with_gdk/include"
+       OGDK3_CPPFLAGS="$OGDK3_CPPFLAGS -I$with_gdk/include"
+       OGDK3_LIBS="$OGDK3_LIBS -L$with_gdk/lib"
+       CPPFLAGS="-I$with_gdk/include $CPPFLAGS"
        LIBS="-L$with_gdk/lib $LIBS"
        FRAMEWORK_LIBS="-L$with_gdk/lib $FRAMEWORK_LIBS"
 ])
 
 PKG_CHECK_MODULES(gdk, [gdk-3.0 >= $(pkg-config --modversion gdk-3.0)], [
+	OGDK3_CPPFLAGS="$OGDK3_CPPFLAGS $gdk_CFLAGS"
+	OGDK3_LIBS="$OGDK3_LIBS $gdk_LIBS"
 	CPPFLAGS="$CPPFLAGS $gdk_CFLAGS"
 	LIBS="$LIBS $gdk_LIBS"
 ], [

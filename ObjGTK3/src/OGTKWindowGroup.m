@@ -6,9 +6,9 @@
 
 #import "OGTKWindowGroup.h"
 
-#import "OGTKWindow.h"
-#import <OGdk3/OGGdkDevice.h>
 #import "OGTKWidget.h"
+#import <OGdk3/OGGdkDevice.h>
+#import "OGTKWindow.h"
 
 @implementation OGTKWindowGroup
 

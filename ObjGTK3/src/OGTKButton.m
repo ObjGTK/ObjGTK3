@@ -6,8 +6,8 @@
 
 #import "OGTKButton.h"
 
-#import "OGTKWidget.h"
 #import <OGdk3/OGGdkWindow.h>
+#import "OGTKWidget.h"
 
 @implementation OGTKButton
 

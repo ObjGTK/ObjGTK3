@@ -8,8 +8,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGAtkRelation;
 @class OGAtkObject;
+@class OGAtkRelation;
 
 /**
  * The AtkRelationSet held by an object establishes its relationships

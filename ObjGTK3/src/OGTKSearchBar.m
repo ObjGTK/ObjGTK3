@@ -6,8 +6,8 @@
 
 #import "OGTKSearchBar.h"
 
-#import "OGTKWidget.h"
 #import "OGTKEntry.h"
+#import "OGTKWidget.h"
 
 @implementation OGTKSearchBar
 

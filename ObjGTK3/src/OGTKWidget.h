@@ -4,31 +4,31 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
 #include <gtk/gtk.h>
+#include <gtk/gtk-a11y.h>
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkDisplay;
 @class OGGdkDevice;
-@class OGGdkFrameClock;
-@class OGPangoContext;
-@class OGGdkScreen;
-@class OGAtkObject;
-@class OGTKSettings;
-@class OGTKRcStyle;
 @class OGTKWindow;
 @class OGGdkWindow;
-@class OGPangoFontMap;
+@class OGGdkScreen;
 @class OGTKStyle;
-@class OGGdkDragContext;
 @class OGTKAccelGroup;
-@class OGPangoLayout;
-@class OGGdkVisual;
+@class OGGdkFrameClock;
+@class OGPangoFontMap;
 @class OGTKStyleContext;
-@class OGTKClipboard;
+@class OGAtkObject;
+@class OGPangoLayout;
 @class OGGdkPixbuf;
+@class OGTKRcStyle;
+@class OGGdkVisual;
+@class OGTKSettings;
+@class OGGdkDisplay;
+@class OGTKClipboard;
+@class OGPangoContext;
+@class OGGdkDragContext;
 
 /**
  * GtkWidget is the base class all widgets in GTK+ derive from. It manages the

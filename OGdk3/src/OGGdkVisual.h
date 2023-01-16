@@ -33,24 +33,24 @@
 + (OGGdkVisual*)best;
 
 /**
- * Visual selection should be done using
- *     gdk_screen_get_system_visual() and gdk_screen_get_rgba_visual()
+ * Get the best available depth for the default GDK screen.  “Best”
+ * means “largest,” i.e. 32 preferred over 24 preferred over 8 bits
+ * per pixel.
  *
  * @return best available depth
  */
 + (gint)bestDepth;
 
 /**
- * Visual selection should be done using
- *     gdk_screen_get_system_visual() and gdk_screen_get_rgba_visual()
+ * Return the best available visual type for the default GDK screen.
  *
  * @return best visual type
  */
 + (GdkVisualType)bestType;
 
 /**
- * Visual selection should be done using
- *     gdk_screen_get_system_visual() and gdk_screen_get_rgba_visual()
+ * Combines gdk_visual_get_best_with_depth() and
+ * gdk_visual_get_best_with_type().
  *
  * @param depth a bit depth
  * @param visualType a visual type
@@ -80,9 +80,7 @@
 + (OGGdkVisual*)bestWithType:(GdkVisualType)visualType;
 
 /**
- * Get the system’s default visual for the default GDK screen.
- * This is the visual for the root window of the display.
- * The return value should not be freed.
+ * Use gdk_screen_get_system_visual (gdk_screen_get_default ()).
  *
  * @return system visual
  */

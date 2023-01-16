@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#include <gtk/gtk-a11y.h>
 #include <gtk/gtkx.h>
 #include <gtk/gtk.h>
+#include <gtk/gtk-a11y.h>
 
 #import <OGObject/OGObject.h>
 
 @class OGTKAccelGroup;
-@class OGTKWidget;
 @class OGTKAction;
 @class OGTKActionGroup;
+@class OGTKWidget;
 
 /**
  * > GtkUIManager is deprecated since GTK+ 3.10. To construct user interfaces

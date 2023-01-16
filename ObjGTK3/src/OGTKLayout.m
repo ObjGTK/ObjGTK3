@@ -6,9 +6,9 @@
 
 #import "OGTKLayout.h"
 
+#import <OGdk3/OGGdkWindow.h>
 #import "OGTKAdjustment.h"
 #import "OGTKWidget.h"
-#import <OGdk3/OGGdkWindow.h>
 
 @implementation OGTKLayout
 

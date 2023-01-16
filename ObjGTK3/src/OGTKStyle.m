@@ -6,8 +6,8 @@
 
 #import "OGTKStyle.h"
 
-#import <OGGdkPixbuf/OGGdkPixbuf.h>
 #import "OGTKWidget.h"
+#import <OGGdkPixbuf/OGGdkPixbuf.h>
 #import <OGdk3/OGGdkWindow.h>
 
 @implementation OGTKStyle

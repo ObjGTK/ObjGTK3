@@ -8,8 +8,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGAtkStateSet;
 @class OGAtkRelationSet;
+@class OGAtkStateSet;
 
 /**
  * This class is the primary class for accessibility support via the

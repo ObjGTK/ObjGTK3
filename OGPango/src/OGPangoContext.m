@@ -6,9 +6,9 @@
 
 #import "OGPangoContext.h"
 
+#import "OGPangoFontMap.h"
 #import "OGPangoFontFamily.h"
 #import "OGPangoFontset.h"
-#import "OGPangoFontMap.h"
 #import "OGPangoFont.h"
 
 @implementation OGPangoContext

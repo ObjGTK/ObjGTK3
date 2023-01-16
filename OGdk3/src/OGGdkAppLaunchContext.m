@@ -6,8 +6,8 @@
 
 #import "OGGdkAppLaunchContext.h"
 
-#import "OGGdkDisplay.h"
 #import "OGGdkScreen.h"
+#import "OGGdkDisplay.h"
 
 @implementation OGGdkAppLaunchContext
 

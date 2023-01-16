@@ -6,8 +6,8 @@
 
 #import "OGTKEventController.h"
 
-@class OGGdkDevice;
 @class OGGdkWindow;
+@class OGGdkDevice;
 
 /**
  * #GtkGesture is the base object for gesture recognition, although this

@@ -8,14 +8,14 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkVisual;
 @class OGGdkDisplay;
 @class OGGdkScreen;
-@class OGGdkGLContext;
 @class OGGdkDrawingContext;
-@class OGGdkDevice;
-@class OGGdkCursor;
 @class OGGdkFrameClock;
+@class OGGdkCursor;
+@class OGGdkGLContext;
+@class OGGdkDevice;
+@class OGGdkVisual;
 
 @interface OGGdkWindow : OGObject
 {
@@ -27,14 +27,7 @@
  */
 
 /**
- * Obtains the window underneath the mouse pointer, returning the
- * location of that window in @win_x, @win_y. Returns %NULL if the
- * window under the mouse pointer is not known to GDK (if the window
- * belongs to another application and a #GdkWindow hasn’t been created
- * for it with gdk_window_foreign_new())
- * 
- * NOTE: For multihead-aware widgets or applications use
- * gdk_display_get_window_at_pointer() instead.
+ * Use gdk_device_get_window_at_position() instead.
  *
  * @param winX return location for origin of the window under the pointer
  * @param winY return location for origin of the window under the pointer

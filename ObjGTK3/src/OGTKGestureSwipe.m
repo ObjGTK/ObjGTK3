@@ -6,8 +6,8 @@
 
 #import "OGTKGestureSwipe.h"
 
-#import "OGTKWidget.h"
 #import "OGTKGesture.h"
+#import "OGTKWidget.h"
 
 @implementation OGTKGestureSwipe
 

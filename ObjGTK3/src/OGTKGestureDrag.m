@@ -6,8 +6,8 @@
 
 #import "OGTKGestureDrag.h"
 
-#import "OGTKWidget.h"
 #import "OGTKGesture.h"
+#import "OGTKWidget.h"
 
 @implementation OGTKGestureDrag
 

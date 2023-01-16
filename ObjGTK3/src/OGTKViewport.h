@@ -6,9 +6,9 @@
 
 #import "OGTKBin.h"
 
-@class OGTKWidget;
 @class OGGdkWindow;
 @class OGTKAdjustment;
+@class OGTKWidget;
 
 /**
  * The #GtkViewport widget acts as an adaptor class, implementing

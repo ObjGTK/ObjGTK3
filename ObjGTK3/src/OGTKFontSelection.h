@@ -6,9 +6,9 @@
 
 #import "OGTKBox.h"
 
-@class OGPangoFontFamily;
 @class OGTKWidget;
 @class OGPangoFontFace;
+@class OGPangoFontFamily;
 
 @interface OGTKFontSelection : OGTKBox
 {

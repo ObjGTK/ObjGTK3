@@ -6,8 +6,8 @@
 
 #import "OGTKContainer.h"
 
-@class OGTKWidget;
 @class OGGdkWindow;
+@class OGTKWidget;
 
 /**
  * #GtkPaned has two panes, arranged either

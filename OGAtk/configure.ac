@@ -53,7 +53,10 @@ AS_IF([test x"$enable_static" = x"yes" -o x"$enable_shared" = x"no"], [
 ])
 
 AC_MSG_CHECKING(for ObjFW package OGObject)
-AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)], [
+AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)
+	OGATK_CPPFLAGS="$OGATK_CPPFLAGS $($OBJFW_CONFIG --package OGObject --cppflags)"
+	OGATK_LIBS="$OGATK_LIBS $($OBJFW_CONFIG --package OGObject --libs)"
+], [
 	AC_MSG_ERROR(You need ObjFW package OGObject installed.)
 ])
 
@@ -62,14 +65,16 @@ AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)], [
 AC_ARG_WITH(atk, AS_HELP_STRING([--with-atk=PREFIX],
 	[build with atk in the specified prefix]))
 AS_IF([test x"$with_atk" != x"no" -a x"$with_atk" != x""], [
-       ATK_CPPFLAGS="$ATK_CFLAGS -I$with_atk/include"
-       ATK_LIBS="$ATK_LIBS -L$with_atk/lib"
-       CPPFLAGS="$CPPFLAGS -I$with_atk/include"
+       OGATK_CPPFLAGS="$OGATK_CPPFLAGS -I$with_atk/include"
+       OGATK_LIBS="$OGATK_LIBS -L$with_atk/lib"
+       CPPFLAGS="-I$with_atk/include $CPPFLAGS"
        LIBS="-L$with_atk/lib $LIBS"
        FRAMEWORK_LIBS="-L$with_atk/lib $FRAMEWORK_LIBS"
 ])
 
 PKG_CHECK_MODULES(atk, [atk >= $(pkg-config --modversion atk)], [
+	OGATK_CPPFLAGS="$OGATK_CPPFLAGS $atk_CFLAGS"
+	OGATK_LIBS="$OGATK_LIBS $atk_LIBS"
 	CPPFLAGS="$CPPFLAGS $atk_CFLAGS"
 	LIBS="$LIBS $atk_LIBS"
 ], [

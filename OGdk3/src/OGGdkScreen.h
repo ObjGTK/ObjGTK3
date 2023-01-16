@@ -8,9 +8,9 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkDisplay;
-@class OGGdkVisual;
 @class OGGdkWindow;
+@class OGGdkVisual;
+@class OGGdkDisplay;
 
 /**
  * #GdkScreen objects are the GDK representation of the screen on
@@ -52,8 +52,7 @@
 + (gint)height;
 
 /**
- * Returns the height of the default screen in millimeters.
- * Note that on many X servers this value will not be correct.
+ * Use per-monitor information
  *
  * @return the height of the default screen in millimeters,
  * though it is not always correct.
@@ -61,15 +60,16 @@
 + (gint)heightMm;
 
 /**
- * Use per-monitor information
+ * Gets the width of the default screen in pixels. The returned
+ * size is in ”application pixels”, not in ”device pixels” (see
+ * gdk_screen_get_monitor_scale_factor()).
  *
  * @return the width of the default screen in pixels.
  */
 + (gint)width;
 
 /**
- * Returns the width of the default screen in millimeters.
- * Note that on many X servers this value will not be correct.
+ * Use per-monitor information
  *
  * @return the width of the default screen in millimeters,
  * though it is not always correct.

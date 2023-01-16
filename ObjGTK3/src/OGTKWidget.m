@@ -6,25 +6,25 @@
 
 #import "OGTKWidget.h"
 
-#import <OGdk3/OGGdkDisplay.h>
 #import <OGdk3/OGGdkDevice.h>
-#import <OGdk3/OGGdkFrameClock.h>
-#import <OGPango/OGPangoContext.h>
-#import <OGdk3/OGGdkScreen.h>
-#import <OGAtk/OGAtkObject.h>
-#import "OGTKSettings.h"
-#import "OGTKRcStyle.h"
 #import "OGTKWindow.h"
 #import <OGdk3/OGGdkWindow.h>
-#import <OGPango/OGPangoFontMap.h>
+#import <OGdk3/OGGdkScreen.h>
 #import "OGTKStyle.h"
-#import <OGdk3/OGGdkDragContext.h>
 #import "OGTKAccelGroup.h"
-#import <OGPango/OGPangoLayout.h>
-#import <OGdk3/OGGdkVisual.h>
+#import <OGdk3/OGGdkFrameClock.h>
+#import <OGPango/OGPangoFontMap.h>
 #import "OGTKStyleContext.h"
-#import "OGTKClipboard.h"
+#import <OGAtk/OGAtkObject.h>
+#import <OGPango/OGPangoLayout.h>
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
+#import "OGTKRcStyle.h"
+#import <OGdk3/OGGdkVisual.h>
+#import "OGTKSettings.h"
+#import <OGdk3/OGGdkDisplay.h>
+#import "OGTKClipboard.h"
+#import <OGPango/OGPangoContext.h>
+#import <OGdk3/OGGdkDragContext.h>
 
 @implementation OGTKWidget
 

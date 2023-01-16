@@ -6,8 +6,8 @@
 
 #import "OGTKStackSwitcher.h"
 
-#import "OGTKWidget.h"
 #import "OGTKStack.h"
+#import "OGTKWidget.h"
 
 @implementation OGTKStackSwitcher
 

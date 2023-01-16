@@ -6,11 +6,11 @@
 
 #import "OGTKWidget.h"
 
-@class OGPangoLayout;
 @class OGTKAdjustment;
+@class OGPangoLayout;
+@class OGTKEntryCompletion;
 @class OGGdkPixbuf;
 @class OGTKEntryBuffer;
-@class OGTKEntryCompletion;
 
 /**
  * The #GtkEntry widget is a single line text entry

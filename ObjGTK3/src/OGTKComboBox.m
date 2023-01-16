@@ -6,9 +6,9 @@
 
 #import "OGTKComboBox.h"
 
-#import <OGdk3/OGGdkDevice.h>
-#import "OGTKWidget.h"
 #import <OGAtk/OGAtkObject.h>
+#import "OGTKWidget.h"
+#import <OGdk3/OGGdkDevice.h>
 #import "OGTKCellArea.h"
 
 @implementation OGTKComboBox

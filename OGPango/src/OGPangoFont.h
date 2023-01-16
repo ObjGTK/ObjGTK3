@@ -8,10 +8,10 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGPangoFontMap;
-@class OGPangoFontFace;
 @class OGPangoCoverage;
+@class OGPangoFontMap;
 @class OGPangoEngineShape;
+@class OGPangoFontFace;
 
 /**
  * The #PangoFont structure is used to represent

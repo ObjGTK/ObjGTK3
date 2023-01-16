@@ -8,9 +8,9 @@
 
 #import <OGObject/OGObject.h>
 
+@class OGGdkWindow;
 @class OGGdkDisplay;
 @class OGGdkDevice;
-@class OGGdkWindow;
 @class OGGdkCursor;
 
 /**

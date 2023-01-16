@@ -6,8 +6,8 @@
 
 #import "OGTKGesture.h"
 
-#import <OGdk3/OGGdkDevice.h>
 #import <OGdk3/OGGdkWindow.h>
+#import <OGdk3/OGGdkDevice.h>
 
 @implementation OGTKGesture
 

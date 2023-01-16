@@ -6,8 +6,8 @@
 
 #import "OGAtkRelationSet.h"
 
-#import "OGAtkRelation.h"
 #import "OGAtkObject.h"
+#import "OGAtkRelation.h"
 
 @implementation OGAtkRelationSet
 

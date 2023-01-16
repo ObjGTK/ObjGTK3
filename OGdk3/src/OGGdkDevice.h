@@ -41,8 +41,8 @@
 + (void)freeHistoryWithEvents:(GdkTimeCoord**)events nevents:(gint)nevents;
 
 /**
- * Determines information about the current keyboard grab.
- * This is not public API and must not be used by applications.
+ * The symbol was never meant to be used outside
+ *   of GTK+
  *
  * @param display the display for which to get the grab information
  * @param device device to get the grab information from

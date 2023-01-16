@@ -7,9 +7,9 @@
 #import "OGTKIconTheme.h"
 
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
-#import <OGdk3/OGGdkScreen.h>
-#import <OGdk3/OGGdkWindow.h>
 #import "OGTKIconInfo.h"
+#import <OGdk3/OGGdkWindow.h>
+#import <OGdk3/OGGdkScreen.h>
 
 @implementation OGTKIconTheme
 

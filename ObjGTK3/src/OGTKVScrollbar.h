@@ -6,8 +6,8 @@
 
 #import "OGTKScrollbar.h"
 
-@class OGTKAdjustment;
 @class OGTKWidget;
+@class OGTKAdjustment;
 
 /**
  * The #GtkVScrollbar widget is a widget arranged vertically creating a

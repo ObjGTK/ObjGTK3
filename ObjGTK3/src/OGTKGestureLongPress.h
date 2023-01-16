@@ -6,8 +6,8 @@
 
 #import "OGTKGestureSingle.h"
 
-@class OGTKWidget;
 @class OGTKGesture;
+@class OGTKWidget;
 
 /**
  * #GtkGestureLongPress is a #GtkGesture implementation able to recognize

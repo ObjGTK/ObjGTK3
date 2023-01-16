@@ -8,8 +8,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkDisplay;
 @class OGGdkScreen;
+@class OGGdkDisplay;
 
 /**
  * GdkAppLaunchContext is an implementation of #GAppLaunchContext that

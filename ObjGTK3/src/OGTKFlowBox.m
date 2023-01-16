@@ -6,9 +6,9 @@
 
 #import "OGTKFlowBox.h"
 
-#import "OGTKAdjustment.h"
-#import "OGTKFlowBoxChild.h"
 #import "OGTKWidget.h"
+#import "OGTKFlowBoxChild.h"
+#import "OGTKAdjustment.h"
 
 @implementation OGTKFlowBox
 

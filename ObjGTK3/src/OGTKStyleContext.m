@@ -7,8 +7,8 @@
 #import "OGTKStyleContext.h"
 
 #import <OGdk3/OGGdkScreen.h>
-#import <OGdk3/OGGdkWindow.h>
 #import <OGdk3/OGGdkFrameClock.h>
+#import <OGdk3/OGGdkWindow.h>
 
 @implementation OGTKStyleContext
 

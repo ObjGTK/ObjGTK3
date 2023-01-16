@@ -53,7 +53,10 @@ AS_IF([test x"$enable_static" = x"yes" -o x"$enable_shared" = x"no"], [
 ])
 
 AC_MSG_CHECKING(for ObjFW package OGObject)
-AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)], [
+AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)
+	OGGDKPIXBUF_CPPFLAGS="$OGGDKPIXBUF_CPPFLAGS $($OBJFW_CONFIG --package OGObject --cppflags)"
+	OGGDKPIXBUF_LIBS="$OGGDKPIXBUF_LIBS $($OBJFW_CONFIG --package OGObject --libs)"
+], [
 	AC_MSG_ERROR(You need ObjFW package OGObject installed.)
 ])
 
@@ -62,14 +65,16 @@ AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)], [
 AC_ARG_WITH(gdk, AS_HELP_STRING([--with-gdk=PREFIX],
 	[build with gdk-pixbuf-2.0 in the specified prefix]))
 AS_IF([test x"$with_gdk" != x"no" -a x"$with_gdk" != x""], [
-       GDK_CPPFLAGS="$GDK_CFLAGS -I$with_gdk/include"
-       GDK_LIBS="$GDK_LIBS -L$with_gdk/lib"
-       CPPFLAGS="$CPPFLAGS -I$with_gdk/include"
+       OGGDKPIXBUF_CPPFLAGS="$OGGDKPIXBUF_CPPFLAGS -I$with_gdk/include"
+       OGGDKPIXBUF_LIBS="$OGGDKPIXBUF_LIBS -L$with_gdk/lib"
+       CPPFLAGS="-I$with_gdk/include $CPPFLAGS"
        LIBS="-L$with_gdk/lib $LIBS"
        FRAMEWORK_LIBS="-L$with_gdk/lib $FRAMEWORK_LIBS"
 ])
 
 PKG_CHECK_MODULES(gdk, [gdk-pixbuf-2.0 >= $(pkg-config --modversion gdk-pixbuf-2.0)], [
+	OGGDKPIXBUF_CPPFLAGS="$OGGDKPIXBUF_CPPFLAGS $gdk_CFLAGS"
+	OGGDKPIXBUF_LIBS="$OGGDKPIXBUF_LIBS $gdk_LIBS"
 	CPPFLAGS="$CPPFLAGS $gdk_CFLAGS"
 	LIBS="$LIBS $gdk_LIBS"
 ], [

@@ -7,11 +7,11 @@
 #import "OGTKMenuShell.h"
 
 @class OGTKAccelGroup;
-@class OGGdkDevice;
 @class OGTKWidget;
-@class OGGdkMonitor;
-@class OGGdkWindow;
 @class OGGdkScreen;
+@class OGGdkMonitor;
+@class OGGdkDevice;
+@class OGGdkWindow;
 
 /**
  * A #GtkMenu is a #GtkMenuShell that implements a drop down menu

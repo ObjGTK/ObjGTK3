@@ -8,13 +8,13 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkSeat;
-@class OGGdkDevice;
-@class OGGdkWindow;
-@class OGGdkScreen;
-@class OGGdkDeviceManager;
-@class OGGdkAppLaunchContext;
 @class OGGdkMonitor;
+@class OGGdkAppLaunchContext;
+@class OGGdkDeviceManager;
+@class OGGdkWindow;
+@class OGGdkDevice;
+@class OGGdkScreen;
+@class OGGdkSeat;
 
 /**
  * #GdkDisplay objects purpose are two fold:

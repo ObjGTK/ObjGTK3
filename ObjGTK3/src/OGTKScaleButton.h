@@ -6,8 +6,8 @@
 
 #import "OGTKButton.h"
 
-@class OGTKWidget;
 @class OGTKAdjustment;
+@class OGTKWidget;
 
 /**
  * #GtkScaleButton provides a button which pops up a scale widget.

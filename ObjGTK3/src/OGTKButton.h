@@ -6,8 +6,8 @@
 
 #import "OGTKBin.h"
 
-@class OGTKWidget;
 @class OGGdkWindow;
+@class OGTKWidget;
 
 /**
  * The #GtkButton widget is generally used to trigger a callback function that is

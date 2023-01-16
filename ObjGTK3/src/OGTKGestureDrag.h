@@ -6,8 +6,8 @@
 
 #import "OGTKGestureSingle.h"
 
-@class OGTKWidget;
 @class OGTKGesture;
+@class OGTKWidget;
 
 /**
  * #GtkGestureDrag is a #GtkGesture implementation that recognizes drag

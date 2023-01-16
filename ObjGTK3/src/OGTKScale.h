@@ -6,8 +6,8 @@
 
 #import "OGTKRange.h"
 
-@class OGTKAdjustment;
 @class OGTKWidget;
+@class OGTKAdjustment;
 @class OGPangoLayout;
 
 /**

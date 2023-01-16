@@ -53,7 +53,10 @@ AS_IF([test x"$enable_static" = x"yes" -o x"$enable_shared" = x"no"], [
 ])
 
 AC_MSG_CHECKING(for ObjFW package OGObject)
-AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)], [
+AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)
+	OGPANGO_CPPFLAGS="$OGPANGO_CPPFLAGS $($OBJFW_CONFIG --package OGObject --cppflags)"
+	OGPANGO_LIBS="$OGPANGO_LIBS $($OBJFW_CONFIG --package OGObject --libs)"
+], [
 	AC_MSG_ERROR(You need ObjFW package OGObject installed.)
 ])
 
@@ -62,14 +65,16 @@ AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)], [
 AC_ARG_WITH(pango, AS_HELP_STRING([--with-pango=PREFIX],
 	[build with pango in the specified prefix]))
 AS_IF([test x"$with_pango" != x"no" -a x"$with_pango" != x""], [
-       PANGO_CPPFLAGS="$PANGO_CFLAGS -I$with_pango/include"
-       PANGO_LIBS="$PANGO_LIBS -L$with_pango/lib"
-       CPPFLAGS="$CPPFLAGS -I$with_pango/include"
+       OGPANGO_CPPFLAGS="$OGPANGO_CPPFLAGS -I$with_pango/include"
+       OGPANGO_LIBS="$OGPANGO_LIBS -L$with_pango/lib"
+       CPPFLAGS="-I$with_pango/include $CPPFLAGS"
        LIBS="-L$with_pango/lib $LIBS"
        FRAMEWORK_LIBS="-L$with_pango/lib $FRAMEWORK_LIBS"
 ])
 
 PKG_CHECK_MODULES(pango, [pango >= $(pkg-config --modversion pango)], [
+	OGPANGO_CPPFLAGS="$OGPANGO_CPPFLAGS $pango_CFLAGS"
+	OGPANGO_LIBS="$OGPANGO_LIBS $pango_LIBS"
 	CPPFLAGS="$CPPFLAGS $pango_CFLAGS"
 	LIBS="$LIBS $pango_LIBS"
 ], [

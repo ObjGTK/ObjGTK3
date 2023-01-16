@@ -53,31 +53,42 @@ AS_IF([test x"$enable_static" = x"yes" -o x"$enable_shared" = x"no"], [
 ])
 
 AC_MSG_CHECKING(for ObjFW package OGObject)
-AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)], [
+AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)
+	OBJGTK3_CPPFLAGS="$OBJGTK3_CPPFLAGS $($OBJFW_CONFIG --package OGObject --cppflags)"
+	OBJGTK3_LIBS="$OBJGTK3_LIBS $($OBJFW_CONFIG --package OGObject --libs)"
+], [
 	AC_MSG_ERROR(You need ObjFW package OGObject installed.)
 ])
 
 AC_MSG_CHECKING(for ObjFW package OGdk3)
-AS_IF([$OBJFW_CONFIG --package OGdk3], [AC_MSG_RESULT(yes)], [
+AS_IF([$OBJFW_CONFIG --package OGdk3], [AC_MSG_RESULT(yes)
+	OBJGTK3_CPPFLAGS="$OBJGTK3_CPPFLAGS $($OBJFW_CONFIG --package OGdk3 --cppflags)"
+	OBJGTK3_LIBS="$OBJGTK3_LIBS $($OBJFW_CONFIG --package OGdk3 --libs)"
+], [
 	AC_MSG_ERROR(You need ObjFW package OGdk3 installed.)
 ])
 
 AC_MSG_CHECKING(for ObjFW package OGAtk)
-AS_IF([$OBJFW_CONFIG --package OGAtk], [AC_MSG_RESULT(yes)], [
+AS_IF([$OBJFW_CONFIG --package OGAtk], [AC_MSG_RESULT(yes)
+	OBJGTK3_CPPFLAGS="$OBJGTK3_CPPFLAGS $($OBJFW_CONFIG --package OGAtk --cppflags)"
+	OBJGTK3_LIBS="$OBJGTK3_LIBS $($OBJFW_CONFIG --package OGAtk --libs)"
+], [
 	AC_MSG_ERROR(You need ObjFW package OGAtk installed.)
 ])
 
 AC_ARG_WITH(gtk, AS_HELP_STRING([--with-gtk=PREFIX],
 	[build with gtk+-3.0 in the specified prefix]))
 AS_IF([test x"$with_gtk" != x"no" -a x"$with_gtk" != x""], [
-       GTK_CPPFLAGS="$GTK_CFLAGS -I$with_gtk/include"
-       GTK_LIBS="$GTK_LIBS -L$with_gtk/lib"
-       CPPFLAGS="$CPPFLAGS -I$with_gtk/include"
+       OBJGTK3_CPPFLAGS="$OBJGTK3_CPPFLAGS -I$with_gtk/include"
+       OBJGTK3_LIBS="$OBJGTK3_LIBS -L$with_gtk/lib"
+       CPPFLAGS="-I$with_gtk/include $CPPFLAGS"
        LIBS="-L$with_gtk/lib $LIBS"
        FRAMEWORK_LIBS="-L$with_gtk/lib $FRAMEWORK_LIBS"
 ])
 
 PKG_CHECK_MODULES(gtk, [gtk+-3.0 >= $(pkg-config --modversion gtk+-3.0)], [
+	OBJGTK3_CPPFLAGS="$OBJGTK3_CPPFLAGS $gtk_CFLAGS"
+	OBJGTK3_LIBS="$OBJGTK3_LIBS $gtk_LIBS"
 	CPPFLAGS="$CPPFLAGS $gtk_CFLAGS"
 	LIBS="$LIBS $gtk_LIBS"
 ], [
