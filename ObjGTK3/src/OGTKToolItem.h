@@ -6,8 +6,8 @@
 
 #import "OGTKBin.h"
 
-@class OGTKSizeGroup;
 @class OGTKWidget;
+@class OGTKSizeGroup;
 
 /**
  * #GtkToolItems are widgets that can appear on a toolbar. To

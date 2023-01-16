@@ -6,8 +6,8 @@
 
 #import "OGTKGestureDrag.h"
 
-@class OGTKGesture;
 @class OGTKWidget;
+@class OGTKGesture;
 
 /**
  * #GtkGesturePan is a #GtkGesture implementation able to recognize

@@ -6,8 +6,8 @@
 
 #import "OGTKHScale.h"
 
-#import "OGTKWidget.h"
 #import "OGTKAdjustment.h"
+#import "OGTKWidget.h"
 
 @implementation OGTKHScale
 

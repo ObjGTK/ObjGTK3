@@ -57,14 +57,14 @@ AS_IF([$OBJFW_CONFIG --package OGObject], [AC_MSG_RESULT(yes)], [
 	AC_MSG_ERROR(You need ObjFW package OGObject installed.)
 ])
 
-AC_MSG_CHECKING(for ObjFW package OGAtk)
-AS_IF([$OBJFW_CONFIG --package OGAtk], [AC_MSG_RESULT(yes)], [
-	AC_MSG_ERROR(You need ObjFW package OGAtk installed.)
-])
-
 AC_MSG_CHECKING(for ObjFW package OGdk3)
 AS_IF([$OBJFW_CONFIG --package OGdk3], [AC_MSG_RESULT(yes)], [
 	AC_MSG_ERROR(You need ObjFW package OGdk3 installed.)
+])
+
+AC_MSG_CHECKING(for ObjFW package OGAtk)
+AS_IF([$OBJFW_CONFIG --package OGAtk], [AC_MSG_RESULT(yes)], [
+	AC_MSG_ERROR(You need ObjFW package OGAtk installed.)
 ])
 
 AC_ARG_WITH(gtk, AS_HELP_STRING([--with-gtk=PREFIX],

@@ -10,8 +10,8 @@
 
 #import <OGdk3/OGGdkWindow.h>
 
-@class OGGdkPixbuf;
 @class OGTKWidget;
+@class OGGdkPixbuf;
 
 /**
  * A #GtkAssistant is a widget used to represent a generally complex

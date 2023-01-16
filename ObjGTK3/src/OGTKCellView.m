@@ -6,8 +6,8 @@
 
 #import "OGTKCellView.h"
 
-#import <OGGdkPixbuf/OGGdkPixbuf.h>
 #import "OGTKCellArea.h"
+#import <OGGdkPixbuf/OGGdkPixbuf.h>
 #import "OGTKCellAreaContext.h"
 
 @implementation OGTKCellView

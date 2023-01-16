@@ -9,8 +9,6 @@
 #import <OGObject/OGObject.h>
 
 /**
- * An AtkStateSet contains the states of an object.
- * 
  * An AtkStateSet is a read-only representation of the full set of #AtkStates
  * that apply to an object at a given time. This set is not meant to be
  * modified, but rather created when #atk_object_ref_state_set() is called.

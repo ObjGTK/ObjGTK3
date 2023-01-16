@@ -9,8 +9,6 @@
 #import <OGObject/OGObject.h>
 
 /**
- * A set of ATK utility functions for event and toolkit support.
- * 
  * A set of ATK utility functions which are used to support event
  * registration of various types, and obtaining the 'root' accessible
  * of a process and information about the current ATK implementation

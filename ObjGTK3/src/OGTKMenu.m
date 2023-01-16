@@ -6,12 +6,12 @@
 
 #import "OGTKMenu.h"
 
+#import "OGTKAccelGroup.h"
 #import <OGdk3/OGGdkDevice.h>
+#import "OGTKWidget.h"
+#import <OGdk3/OGGdkMonitor.h>
 #import <OGdk3/OGGdkWindow.h>
 #import <OGdk3/OGGdkScreen.h>
-#import "OGTKAccelGroup.h"
-#import <OGdk3/OGGdkMonitor.h>
-#import "OGTKWidget.h"
 
 @implementation OGTKMenu
 

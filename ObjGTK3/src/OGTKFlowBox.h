@@ -6,9 +6,9 @@
 
 #import "OGTKContainer.h"
 
+@class OGTKAdjustment;
 @class OGTKWidget;
 @class OGTKFlowBoxChild;
-@class OGTKAdjustment;
 
 /**
  * A GtkFlowBox positions child widgets in sequence according to its

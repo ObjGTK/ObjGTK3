@@ -6,8 +6,8 @@
 
 #import "OGTKGesturePan.h"
 
-#import "OGTKGesture.h"
 #import "OGTKWidget.h"
+#import "OGTKGesture.h"
 
 @implementation OGTKGesturePan
 

@@ -7,9 +7,7 @@
 #import "OGAtkObject.h"
 
 /**
- * Toplevel for embedding into other processes
- * 
- * See [class@AtkSocket]
+ * See #AtkSocket
  *
  */
 @interface OGAtkPlug : OGAtkObject

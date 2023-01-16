@@ -11,10 +11,10 @@
 #import <OGObject/OGObject.h>
 
 @class OGTKTextTagTable;
-@class OGGdkPixbuf;
-@class OGTKTextChildAnchor;
 @class OGTKTextTag;
+@class OGGdkPixbuf;
 @class OGTKTextMark;
+@class OGTKTextChildAnchor;
 @class OGTKClipboard;
 
 /**

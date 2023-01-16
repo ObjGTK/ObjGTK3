@@ -8,8 +8,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkDisplay;
 @class OGGdkPixbuf;
+@class OGGdkDisplay;
 
 /**
  * A #GdkCursor represents a cursor. Its contents are private.

@@ -10,9 +10,9 @@
 
 #import <OGObject/OGObject.h>
 
+@class OGGdkFrameClock;
 @class OGGdkWindow;
 @class OGGdkScreen;
-@class OGGdkFrameClock;
 
 /**
  * #GtkStyleContext is an object that stores styling information affecting

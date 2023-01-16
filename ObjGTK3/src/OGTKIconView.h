@@ -6,10 +6,10 @@
 
 #import "OGTKContainer.h"
 
-@class OGTKCellArea;
 @class OGTKTooltip;
-@class OGTKWidget;
+@class OGTKCellArea;
 @class OGTKCellRenderer;
+@class OGTKWidget;
 
 /**
  * #GtkIconView provides an alternative view on a #GtkTreeModel.

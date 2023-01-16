@@ -6,13 +6,13 @@
 
 #import "OGTKContainer.h"
 
-@class OGTKAdjustment;
-@class OGTKWidget;
 @class OGTKListBoxRow;
+@class OGTKWidget;
+@class OGTKAdjustment;
 
 /**
  * A GtkListBox is a vertical container that contains GtkListBoxRow
- * children. These rows can be dynamically sorted and filtered, and
+ * children. These rows can by dynamically sorted and filtered, and
  * headers can be added dynamically depending on the row content.
  * It also allows keyboard and mouse navigation and selection like
  * a typical list.
@@ -37,7 +37,7 @@
  * 
  * The GtkListBox implementation of the #GtkBuildable interface supports
  * setting a child as the placeholder by specifying “placeholder” as the “type”
- * attribute of a `<child>` element. See gtk_list_box_set_placeholder() for info.
+ * attribute of a <child> element. See gtk_list_box_set_placeholder() for info.
  * 
  * # CSS nodes
  * 

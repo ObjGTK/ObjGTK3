@@ -6,8 +6,8 @@
 
 #import "OGTKDialog.h"
 
-@class OGGdkPixbuf;
 @class OGTKWidget;
+@class OGGdkPixbuf;
 
 /**
  * The GtkAboutDialog offers a simple way to display information about

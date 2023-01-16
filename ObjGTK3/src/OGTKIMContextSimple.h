@@ -17,8 +17,6 @@
  * Compose file). The syntax of these files is described in the Compose(5)
  * manual page.
  * 
- * ## Unicode characters
- * 
  * GtkIMContextSimple also supports numeric entry of Unicode characters
  * by typing Ctrl-Shift-u, followed by a hexadecimal Unicode codepoint.
  * For example, Ctrl-Shift-u 1 2 3 Enter yields U+0123 LATIN SMALL LETTER
@@ -43,9 +41,8 @@
 - (GtkIMContextSimple*)IMCONTEXTSIMPLE;
 
 /**
- * Adds an additional table from the X11 compose file.
  *
- * @param composeFile The path of compose file
+ * @param composeFile
  */
 - (void)addComposeFile:(OFString*)composeFile;
 
@@ -62,6 +59,7 @@
  *
  * @param data the table
  * @param maxSeqLen Maximum length of a sequence in the table
+ *               (cannot be greater than #GTK_MAX_COMPOSE_LEN)
  * @param nseqs number of sequences in the table
  */
 - (void)addTableWithData:(guint16*)data maxSeqLen:(gint)maxSeqLen nseqs:(gint)nseqs;

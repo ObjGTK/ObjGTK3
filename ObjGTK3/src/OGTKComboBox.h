@@ -6,9 +6,9 @@
 
 #import "OGTKBin.h"
 
-@class OGGdkDevice;
 @class OGAtkObject;
 @class OGTKWidget;
+@class OGGdkDevice;
 @class OGTKCellArea;
 
 /**

@@ -9,8 +9,8 @@
 #import <OGObject/OGObject.h>
 
 @class OGGdkWindow;
-@class OGGdkDisplay;
 @class OGGdkVisual;
+@class OGGdkDisplay;
 
 /**
  * #GdkScreen objects are the GDK representation of the screen on

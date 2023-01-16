@@ -11,10 +11,6 @@
 @class OGAtkObjectFactory;
 
 /**
- * An object used to store the GType of the
- * factories used to create an accessible object for an object of a
- * particular GType.
- * 
  * The AtkRegistry is normally used to create appropriate ATK "peers"
  * for user interface components.  Application developers usually need
  * only interact with the AtkRegistry by associating appropriate ATK

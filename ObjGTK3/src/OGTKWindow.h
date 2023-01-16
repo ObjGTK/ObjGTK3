@@ -7,11 +7,11 @@
 #import "OGTKBin.h"
 
 @class OGGdkPixbuf;
+@class OGGdkScreen;
+@class OGTKWindowGroup;
 @class OGTKApplication;
 @class OGTKAccelGroup;
 @class OGTKWidget;
-@class OGTKWindowGroup;
-@class OGGdkScreen;
 
 /**
  * A GtkWindow is a toplevel window which can contain other widgets.
@@ -22,16 +22,15 @@
  * # GtkWindow as GtkBuildable
  * 
  * The GtkWindow implementation of the #GtkBuildable interface supports a
- * custom `<accel-groups>` element, which supports any number of `<group>`
+ * custom <accel-groups> element, which supports any number of <group>
  * elements representing the #GtkAccelGroup objects you want to add to
  * your window (synonymous with gtk_window_add_accel_group().
  * 
- * It also supports the `<initial-focus>` element, whose name property names
+ * It also supports the <initial-focus> element, whose name property names
  * the widget to receive the focus when the window is mapped.
  * 
  * An example of a UI definition fragment with accel groups:
- * 
- * |[<!-- language="xml" -->
+ * |[
  * <object class="GtkWindow">
  *   <accel-groups>
  *     <group name="accelgroup1"/>
@@ -46,7 +45,7 @@
  * 
  * The GtkWindow implementation of the #GtkBuildable interface supports
  * setting a child as the titlebar by specifying “titlebar” as the “type”
- * attribute of a `<child>` element.
+ * attribute of a <child> element.
  * 
  * # CSS nodes
  * 
@@ -1608,7 +1607,7 @@
  * window is definitely unstuck afterward, because other entities
  * (e.g. the user or [window manager][gtk-X11-arch]) could
  * stick it again. But normally the window will
- * end up unstuck. Just don’t write code that crashes if not.
+ * end up stuck. Just don’t write code that crashes if not.
  * 
  * You can track stickiness via the “window-state-event” signal
  * on #GtkWidget.

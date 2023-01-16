@@ -6,8 +6,8 @@
 
 #import "OGTKAboutDialog.h"
 
-#import <OGGdkPixbuf/OGGdkPixbuf.h>
 #import "OGTKWidget.h"
+#import <OGGdkPixbuf/OGGdkPixbuf.h>
 
 @implementation OGTKAboutDialog
 

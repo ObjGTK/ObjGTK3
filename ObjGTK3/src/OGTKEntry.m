@@ -6,11 +6,11 @@
 
 #import "OGTKEntry.h"
 
-#import <OGPango/OGPangoLayout.h>
-#import "OGTKEntryBuffer.h"
+#import <OGGdkPixbuf/OGGdkPixbuf.h>
 #import "OGTKEntryCompletion.h"
 #import "OGTKAdjustment.h"
-#import <OGGdkPixbuf/OGGdkPixbuf.h>
+#import <OGPango/OGPangoLayout.h>
+#import "OGTKEntryBuffer.h"
 
 @implementation OGTKEntry
 

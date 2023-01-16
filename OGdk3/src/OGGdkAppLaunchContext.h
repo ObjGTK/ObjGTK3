@@ -8,8 +8,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkScreen;
 @class OGGdkDisplay;
+@class OGGdkScreen;
 
 /**
  * GdkAppLaunchContext is an implementation of #GAppLaunchContext that
@@ -103,9 +103,6 @@
 /**
  * Sets the screen on which applications will be launched when
  * using this context. See also gdk_app_launch_context_set_display().
- * 
- * Note that, typically, a #GdkScreen represents a logical screen,
- * not a physical monitor.
  * 
  * If both @screen and @display are set, the @screen takes priority.
  * If neither @screen or @display are set, the default screen and

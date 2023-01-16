@@ -6,8 +6,8 @@
 
 #import "OGGdkCursor.h"
 
-#import "OGGdkDisplay.h"
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
+#import "OGGdkDisplay.h"
 
 @implementation OGGdkCursor
 

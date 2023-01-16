@@ -6,8 +6,8 @@
 
 #import "OGTKContainer.h"
 
-@class OGGdkWindow;
 @class OGTKWidget;
+@class OGGdkWindow;
 
 /**
  * Together with #GtkPlug, #GtkSocket provides the ability to embed

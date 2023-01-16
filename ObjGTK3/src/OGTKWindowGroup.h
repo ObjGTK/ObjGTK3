@@ -10,9 +10,9 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkDevice;
-@class OGTKWindow;
 @class OGTKWidget;
+@class OGTKWindow;
+@class OGGdkDevice;
 
 /**
  * A #GtkWindowGroup restricts the effect of grabs to windows

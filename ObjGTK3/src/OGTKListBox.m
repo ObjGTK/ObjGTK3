@@ -6,9 +6,9 @@
 
 #import "OGTKListBox.h"
 
-#import "OGTKAdjustment.h"
-#import "OGTKWidget.h"
 #import "OGTKListBoxRow.h"
+#import "OGTKWidget.h"
+#import "OGTKAdjustment.h"
 
 @implementation OGTKListBox
 

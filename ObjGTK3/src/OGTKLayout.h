@@ -6,9 +6,9 @@
 
 #import "OGTKContainer.h"
 
-@class OGGdkWindow;
 @class OGTKWidget;
 @class OGTKAdjustment;
+@class OGGdkWindow;
 
 /**
  * #GtkLayout is similar to #GtkDrawingArea in that it’s a “blank slate” and

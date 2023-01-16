@@ -6,13 +6,13 @@
 
 #import "OGGdkDisplay.h"
 
-#import "OGGdkWindow.h"
+#import "OGGdkAppLaunchContext.h"
 #import "OGGdkDevice.h"
 #import "OGGdkScreen.h"
 #import "OGGdkDeviceManager.h"
-#import "OGGdkSeat.h"
-#import "OGGdkAppLaunchContext.h"
 #import "OGGdkMonitor.h"
+#import "OGGdkWindow.h"
+#import "OGGdkSeat.h"
 
 @implementation OGGdkDisplay
 

@@ -6,8 +6,8 @@
 
 #import "OGTKClipboard.h"
 
-#import "OGTKTextBuffer.h"
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
+#import "OGTKTextBuffer.h"
 #import <OGdk3/OGGdkDisplay.h>
 
 @implementation OGTKClipboard

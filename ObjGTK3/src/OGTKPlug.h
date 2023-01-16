@@ -10,8 +10,8 @@
 
 #import <OGdk3/OGGdkWindow.h>
 
-@class OGGdkDisplay;
 @class OGTKWidget;
+@class OGGdkDisplay;
 
 /**
  * Together with #GtkSocket, #GtkPlug provides the ability to embed

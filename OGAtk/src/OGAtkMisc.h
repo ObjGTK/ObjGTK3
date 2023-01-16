@@ -9,8 +9,6 @@
 #import <OGObject/OGObject.h>
 
 /**
- * A set of ATK utility functions for thread locking
- * 
  * A set of utility functions for thread locking. This interface and
  * all his related methods are deprecated since 2.12.
  *

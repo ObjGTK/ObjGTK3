@@ -8,12 +8,10 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGAtkRelationSet;
 @class OGAtkStateSet;
+@class OGAtkRelationSet;
 
 /**
- * The base object class for the Accessibility Toolkit API.
- * 
  * This class is the primary class for accessibility support via the
  * Accessibility ToolKit (ATK).  Objects which are instances of
  * #AtkObject (or instances of AtkObject-derived types) are queried
@@ -32,7 +30,7 @@
  * implementation is insufficient, via instances of a new #AtkObject
  * subclass.
  * 
- * See [class@AtkObjectFactory], [class@AtkRegistry].  (GTK+ users see also
+ * See also: #AtkObjectFactory, #AtkRegistry.  (GTK+ users see also
  * #GtkAccessible).
  *
  */

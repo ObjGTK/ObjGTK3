@@ -8,13 +8,10 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGAtkRelation;
 @class OGAtkObject;
+@class OGAtkRelation;
 
 /**
- * A set of AtkRelations, normally the set of
- *  AtkRelations which an AtkObject has.
- * 
  * The AtkRelationSet held by an object establishes its relationships
  * with objects beyond the normal "parent/child" hierarchical
  * relationships that all user interface objects have.

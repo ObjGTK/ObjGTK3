@@ -6,8 +6,8 @@
 
 #import "OGTKMountOperation.h"
 
-#import "OGTKWindow.h"
 #import <OGdk3/OGGdkScreen.h>
+#import "OGTKWindow.h"
 
 @implementation OGTKMountOperation
 

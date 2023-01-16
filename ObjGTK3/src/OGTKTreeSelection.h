@@ -73,40 +73,31 @@
 - (GtkTreeSelectionFunc)selectFunction;
 
 /**
- * Sets @iter to the currently selected node, if @selection is set to
- * %GTK_SELECTION_SINGLE or %GTK_SELECTION_BROWSE.
- * 
- * The @iter argument may be %NULL if you just want to test if @selection
- * has any selected nodes.
- * 
- * The @model argument is filled with the current model as a convenience.
- * 
- * This function will not work with %GTK_SELECTION_MULTIPLE. See
- * gtk_tree_selection_get_selected_rows() instead.
+ * Sets @iter to the currently selected node if @selection is set to
+ * #GTK_SELECTION_SINGLE or #GTK_SELECTION_BROWSE.  @iter may be NULL if you
+ * just want to test if @selection has any selected nodes.  @model is filled
+ * with the current model as a convenience.  This function will not work if you
+ * use @selection is #GTK_SELECTION_MULTIPLE.
  *
- * @param model the model
- * @param iter the iterator for the selected row
- * @return %TRUE, if there is a selected node.
+ * @param model A pointer to set to the #GtkTreeModel, or NULL.
+ * @param iter The #GtkTreeIter, or NULL.
+ * @return TRUE, if there is a selected node.
  */
 - (bool)selectedWithModel:(GtkTreeModel**)model iter:(GtkTreeIter*)iter;
 
 /**
- * Creates a list of path of all selected rows.
- * 
- * Additionally, if you are planning on modifying the model after calling
- * this function, you may want to convert the returned list into a list
- * of #GtkTreeRowReferences.
- * 
+ * Creates a list of path of all selected rows. Additionally, if you are
+ * planning on modifying the model after calling this function, you may
+ * want to convert the returned list into a list of #GtkTreeRowReferences.
  * To do this, you can use gtk_tree_row_reference_new().
  * 
  * To free the return value, use:
- * 
  * |[<!-- language="C" -->
  * g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);
  * ]|
  *
  * @param model A pointer to set to the #GtkTreeModel, or %NULL.
- * @return the selected paths
+ * @return A #GList containing a #GtkTreePath for each selected row.
  */
 - (GList*)selectedRows:(GtkTreeModel**)model;
 

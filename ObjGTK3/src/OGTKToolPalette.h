@@ -6,10 +6,10 @@
 
 #import "OGTKContainer.h"
 
-@class OGTKWidget;
-@class OGTKToolItem;
-@class OGTKToolItemGroup;
 @class OGTKAdjustment;
+@class OGTKWidget;
+@class OGTKToolItemGroup;
+@class OGTKToolItem;
 
 /**
  * A #GtkToolPalette allows you to add #GtkToolItems to a palette-like

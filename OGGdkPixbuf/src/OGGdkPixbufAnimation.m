@@ -6,8 +6,8 @@
 
 #import "OGGdkPixbufAnimation.h"
 
-#import "OGGdkPixbufAnimationIter.h"
 #import "OGGdkPixbuf.h"
+#import "OGGdkPixbufAnimationIter.h"
 
 @implementation OGGdkPixbufAnimation
 

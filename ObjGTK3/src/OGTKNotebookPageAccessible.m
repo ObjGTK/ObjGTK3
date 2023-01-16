@@ -6,8 +6,8 @@
 
 #import "OGTKNotebookPageAccessible.h"
 
-#import "OGTKWidget.h"
 #import "OGTKNotebookAccessible.h"
+#import "OGTKWidget.h"
 
 @implementation OGTKNotebookPageAccessible
 

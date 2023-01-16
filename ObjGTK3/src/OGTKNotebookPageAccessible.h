@@ -10,8 +10,8 @@
 
 #import <OGAtk/OGAtkObject.h>
 
-@class OGTKWidget;
 @class OGTKNotebookAccessible;
+@class OGTKWidget;
 
 @interface OGTKNotebookPageAccessible : OGAtkObject
 {

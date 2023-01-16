@@ -8,14 +8,14 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkDrawingContext;
+@class OGGdkVisual;
+@class OGGdkDisplay;
+@class OGGdkFrameClock;
 @class OGGdkScreen;
+@class OGGdkDevice;
+@class OGGdkDrawingContext;
 @class OGGdkCursor;
 @class OGGdkGLContext;
-@class OGGdkDisplay;
-@class OGGdkDevice;
-@class OGGdkFrameClock;
-@class OGGdkVisual;
 
 @interface OGGdkWindow : OGObject
 {

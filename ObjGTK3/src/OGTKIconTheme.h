@@ -11,8 +11,8 @@
 #import <OGObject/OGObject.h>
 
 @class OGGdkWindow;
-@class OGGdkPixbuf;
 @class OGGdkScreen;
+@class OGGdkPixbuf;
 @class OGTKIconInfo;
 
 /**

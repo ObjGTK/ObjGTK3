@@ -10,8 +10,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGTKWidget;
 @class OGTKAccelGroup;
+@class OGTKWidget;
 
 /**
  * > In GTK+ 3.10, GtkAction has been deprecated. Use #GAction

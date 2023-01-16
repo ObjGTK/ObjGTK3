@@ -10,8 +10,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGTKTextBuffer;
 @class OGGdkPixbuf;
+@class OGTKTextBuffer;
 @class OGGdkDisplay;
 
 /**

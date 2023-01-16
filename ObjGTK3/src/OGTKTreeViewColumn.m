@@ -7,8 +7,8 @@
 #import "OGTKTreeViewColumn.h"
 
 #import "OGTKCellArea.h"
-#import "OGTKCellRenderer.h"
 #import "OGTKWidget.h"
+#import "OGTKCellRenderer.h"
 
 @implementation OGTKTreeViewColumn
 

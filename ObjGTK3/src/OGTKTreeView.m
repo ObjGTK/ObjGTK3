@@ -6,14 +6,14 @@
 
 #import "OGTKTreeView.h"
 
+#import "OGTKTreeSelection.h"
+#import "OGTKTooltip.h"
 #import "OGTKTreeViewColumn.h"
 #import "OGTKCellRenderer.h"
-#import "OGTKTreeSelection.h"
 #import "OGTKEntry.h"
-#import <OGdk3/OGGdkWindow.h>
-#import "OGTKAdjustment.h"
-#import "OGTKTooltip.h"
 #import "OGTKWidget.h"
+#import "OGTKAdjustment.h"
+#import <OGdk3/OGGdkWindow.h>
 
 @implementation OGTKTreeView
 

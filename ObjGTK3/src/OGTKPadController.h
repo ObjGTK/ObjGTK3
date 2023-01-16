@@ -6,8 +6,8 @@
 
 #import "OGTKEventController.h"
 
-@class OGTKWindow;
 @class OGGdkDevice;
+@class OGTKWindow;
 
 /**
  * #GtkPadController is an event controller for the pads found in drawing

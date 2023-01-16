@@ -6,8 +6,8 @@
 
 #import "OGTKStackSidebar.h"
 
-#import "OGTKStack.h"
 #import "OGTKWidget.h"
+#import "OGTKStack.h"
 
 @implementation OGTKStackSidebar
 

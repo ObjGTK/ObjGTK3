@@ -10,9 +10,9 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGTKCellAreaContext;
-@class OGTKCellRenderer;
 @class OGTKWidget;
+@class OGTKCellRenderer;
+@class OGTKCellAreaContext;
 
 /**
  * The #GtkCellArea is an abstract class for #GtkCellLayout widgets

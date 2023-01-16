@@ -10,8 +10,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGTKWindow;
 @class OGGdkScreen;
+@class OGTKWindow;
 
 /**
  * This should not be accessed directly. Use the accessor functions below.

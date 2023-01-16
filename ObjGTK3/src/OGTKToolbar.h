@@ -6,8 +6,8 @@
 
 #import "OGTKContainer.h"
 
-@class OGTKToolItem;
 @class OGTKWidget;
+@class OGTKToolItem;
 
 /**
  * A toolbar is created with a call to gtk_toolbar_new().

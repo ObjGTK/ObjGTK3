@@ -6,10 +6,10 @@
 
 #import "OGTKContainer.h"
 
-@class OGTKTextChildAnchor;
-@class OGGdkWindow;
-@class OGTKAdjustment;
 @class OGTKTextBuffer;
+@class OGGdkWindow;
+@class OGTKTextChildAnchor;
+@class OGTKAdjustment;
 @class OGTKWidget;
 @class OGTKTextMark;
 

@@ -10,8 +10,8 @@
 
 #import <OGdk3/OGGdkWindow.h>
 
-@class OGTKWidget;
 @class OGGdkPixbuf;
+@class OGTKWidget;
 
 /**
  * GtkOffscreenWindow is strictly intended to be used for obtaining

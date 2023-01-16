@@ -7,8 +7,6 @@
 #import "OGAtkObject.h"
 
 /**
- * This object class is derived from AtkObject and can be used as a basis implementing accessible objects.
- * 
  * This object class is derived from AtkObject. It can be used as a
  * basis for implementing accessible objects for GObjects which are
  * not derived from GtkWidget. One example of its use is in providing

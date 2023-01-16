@@ -7,11 +7,11 @@
 #import "OGTKWindow.h"
 
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
+#import <OGdk3/OGGdkScreen.h>
+#import "OGTKWindowGroup.h"
 #import "OGTKApplication.h"
 #import "OGTKAccelGroup.h"
 #import "OGTKWidget.h"
-#import "OGTKWindowGroup.h"
-#import <OGdk3/OGGdkScreen.h>
 
 @implementation OGTKWindow
 

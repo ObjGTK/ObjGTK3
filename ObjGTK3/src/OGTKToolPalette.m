@@ -6,10 +6,10 @@
 
 #import "OGTKToolPalette.h"
 
-#import "OGTKWidget.h"
-#import "OGTKToolItem.h"
-#import "OGTKToolItemGroup.h"
 #import "OGTKAdjustment.h"
+#import "OGTKWidget.h"
+#import "OGTKToolItemGroup.h"
+#import "OGTKToolItem.h"
 
 @implementation OGTKToolPalette
 

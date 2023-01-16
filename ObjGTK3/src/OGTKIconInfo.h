@@ -10,11 +10,11 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkWindow;
 @class OGTKStyle;
-@class OGTKStyleContext;
 @class OGGdkPixbuf;
 @class OGTKIconTheme;
+@class OGTKStyleContext;
+@class OGGdkWindow;
 
 /**
  * Contains information found when looking up an icon in

@@ -9,141 +9,11 @@
 #import <OGObject/OGObject.h>
 
 /**
- * A pixel buffer.
- * 
- * `GdkPixbuf` contains information about an image's pixel data,
- * its color space, bits per sample, width and height, and the
- * rowstride (the number of bytes between the start of one row
- * and the start of the next).
- * 
- * ## Creating new `GdkPixbuf`
- * 
- * The most basic way to create a pixbuf is to wrap an existing pixel
- * buffer with a [class@GdkPixbuf.Pixbuf] instance. You can use the
- * [`ctor@GdkPixbuf.Pixbuf.new_from_data`] function to do this.
- * 
- * Every time you create a new `GdkPixbuf` instance for some data, you
- * will need to specify the destroy notification function that will be
- * called when the data buffer needs to be freed; this will happen when
- * a `GdkPixbuf` is finalized by the reference counting functions. If
- * you have a chunk of static data compiled into your application, you
- * can pass in `NULL` as the destroy notification function so that the
- * data will not be freed.
- * 
- * The [`ctor@GdkPixbuf.Pixbuf.new`] constructor function can be used
- * as a convenience to create a pixbuf with an empty buffer; this is
- * equivalent to allocating a data buffer using `malloc()` and then
- * wrapping it with `gdk_pixbuf_new_from_data()`. The `gdk_pixbuf_new()`
- * function will compute an optimal rowstride so that rendering can be
- * performed with an efficient algorithm.
- * 
- * As a special case, you can use the [`ctor@GdkPixbuf.Pixbuf.new_from_xpm_data`]
- * function to create a pixbuf from inline XPM image data.
- * 
- * You can also copy an existing pixbuf with the [method@Pixbuf.copy]
- * function. This is not the same as just acquiring a reference to
- * the old pixbuf instance: the copy function will actually duplicate
- * the pixel data in memory and create a new [class@Pixbuf] instance
- * for it.
- * 
- * ## Reference counting
- * 
- * `GdkPixbuf` structures are reference counted. This means that an
- * application can share a single pixbuf among many parts of the
- * code. When a piece of the program needs to use a pixbuf, it should
- * acquire a reference to it by calling `g_object_ref()`; when it no
- * longer needs the pixbuf, it should release the reference it acquired
- * by calling `g_object_unref()`. The resources associated with a
- * `GdkPixbuf` will be freed when its reference count drops to zero.
- * Newly-created `GdkPixbuf` instances start with a reference count
- * of one.
- * 
- * ## Image Data
- * 
- * Image data in a pixbuf is stored in memory in an uncompressed,
- * packed format. Rows in the image are stored top to bottom, and
- * in each row pixels are stored from left to right.
- * 
- * There may be padding at the end of a row.
- * 
- * The "rowstride" value of a pixbuf, as returned by [`method@GdkPixbuf.Pixbuf.get_rowstride`],
- * indicates the number of bytes between rows.
- * 
- * **NOTE**: If you are copying raw pixbuf data with `memcpy()` note that the
- * last row in the pixbuf may not be as wide as the full rowstride, but rather
- * just as wide as the pixel data needs to be; that is: it is unsafe to do
- * `memcpy (dest, pixels, rowstride * height)` to copy a whole pixbuf. Use
- * [method@GdkPixbuf.Pixbuf.copy] instead, or compute the width in bytes of the
- * last row as:
- * 
- * ```c
- * last_row = width * ((n_channels * bits_per_sample + 7) / 8);
- * ```
- * 
- * The same rule applies when iterating over each row of a `GdkPixbuf` pixels
- * array.
- * 
- * The following code illustrates a simple `put_pixel()`
- * function for RGB pixbufs with 8 bits per channel with an alpha
- * channel.
- * 
- * ```c
- * static void
- * put_pixel (GdkPixbuf *pixbuf,
- *            int x,
- * 	   int y,
- * 	   guchar red,
- * 	   guchar green,
- * 	   guchar blue,
- * 	   guchar alpha)
- * {
- *   int n_channels = gdk_pixbuf_get_n_channels (pixbuf);
- * 
- *   // Ensure that the pixbuf is valid
- *   g_assert (gdk_pixbuf_get_colorspace (pixbuf) == GDK_COLORSPACE_RGB);
- *   g_assert (gdk_pixbuf_get_bits_per_sample (pixbuf) == 8);
- *   g_assert (gdk_pixbuf_get_has_alpha (pixbuf));
- *   g_assert (n_channels == 4);
- * 
- *   int width = gdk_pixbuf_get_width (pixbuf);
- *   int height = gdk_pixbuf_get_height (pixbuf);
- * 
- *   // Ensure that the coordinates are in a valid range
- *   g_assert (x >= 0 && x < width);
- *   g_assert (y >= 0 && y < height);
- * 
- *   int rowstride = gdk_pixbuf_get_rowstride (pixbuf);
- * 
- *   // The pixel buffer in the GdkPixbuf instance
- *   guchar *pixels = gdk_pixbuf_get_pixels (pixbuf);
- * 
- *   // The pixel we wish to modify
- *   guchar *p = pixels + y * rowstride + x * n_channels;
- *   p[0] = red;
- *   p[1] = green;
- *   p[2] = blue;
- *   p[3] = alpha;
- * }
- * ```
- * 
- * ## Loading images
- * 
- * The `GdkPixBuf` class provides a simple mechanism for loading
- * an image from a file in synchronous and asynchronous fashion.
- * 
- * For GUI applications, it is recommended to use the asynchronous
- * stream API to avoid blocking the control flow of the application.
- * 
- * Additionally, `GdkPixbuf` provides the [class@GdkPixbuf.PixbufLoader`]
- * API for progressive image loading.
- * 
- * ## Saving images
- * 
- * The `GdkPixbuf` class provides methods for saving image data in
- * a number of file formats. The formatted data can be written to a
- * file or to a memory buffer. `GdkPixbuf` can also call a user-defined
- * callback on the data, which allows to e.g. write the image
- * to a socket or store it in a database.
+ * This is the main structure in the gdk-pixbuf library.  It is
+ * used to represent images.  It contains information about the
+ * image's pixel data, its color space, bits per sample, width and
+ * height, and the rowstride (the number of bytes between the start of
+ * one row and the start of the next).
  *
  */
 @interface OGGdkPixbuf : OGObject
@@ -189,47 +59,42 @@
 
 /**
  * Takes an existing pixbuf and adds an alpha channel to it.
- * 
  * If the existing pixbuf already had an alpha channel, the channel
  * values are copied from the original; otherwise, the alpha channel
  * is initialized to 255 (full opacity).
  * 
- * If `substitute_color` is `TRUE`, then the color specified by the
- * (`r`, `g`, `b`) arguments will be assigned zero opacity. That is,
- * if you pass `(255, 255, 255)` for the substitute color, all white
- * pixels will become fully transparent.
- * 
- * If `substitute_color` is `FALSE`, then the (`r`, `g`, `b`) arguments
- * will be ignored.
+ * If @substitute_color is %TRUE, then the color specified by (@r, @g, @b) will be
+ * assigned zero opacity. That is, if you pass (255, 255, 255) for the
+ * substitute color, all white pixels will become fully transparent.
  *
- * @param substituteColor Whether to set a color to zero opacity.
+ * @param substituteColor Whether to set a color to zero opacity.  If this
+ * is %FALSE, then the (@r, @g, @b) arguments will be ignored.
  * @param r Red value to substitute.
  * @param g Green value to substitute.
  * @param b Blue value to substitute.
- * @return A newly-created pixbuf
+ * @return A newly-created pixbuf with a reference count of 1.
  */
 - (OGGdkPixbuf*)addAlphaWithSubstituteColor:(bool)substituteColor r:(guchar)r g:(guchar)g b:(guchar)b;
 
 /**
  * Takes an existing pixbuf and checks for the presence of an
- * associated "orientation" option.
- * 
- * The orientation option may be provided by the JPEG loader (which
- * reads the exif orientation tag) or the TIFF loader (which reads
- * the TIFF orientation tag, and compensates it for the partial
- * transforms performed by libtiff).
- * 
- * If an orientation option/tag is present, the appropriate transform
- * will be performed so that the pixbuf is oriented correctly.
+ * associated "orientation" option, which may be provided by the
+ * jpeg loader (which reads the exif orientation tag) or the
+ * tiff loader (which reads the tiff orientation tag, and
+ * compensates it for the partial transforms performed by
+ * libtiff). If an orientation option/tag is present, the
+ * appropriate transform will be performed so that the pixbuf
+ * is oriented correctly.
  *
- * @return A newly-created pixbuf
+ * @return A newly-created pixbuf, %NULL if
+ * not enough memory could be allocated for it, or a reference to the
+ * input pixbuf (with an increased reference count).
  */
 - (OGGdkPixbuf*)applyEmbeddedOrientation;
 
 /**
  * Creates a transformation of the source image @src by scaling by
  * @scale_x and @scale_y then translating by @offset_x and @offset_y.
- * 
  * This gives an image in the coordinates of the destination pixbuf.
  * The rectangle (@dest_x, @dest_y, @dest_width, @dest_height)
  * is then alpha blended onto the corresponding rectangle of the
@@ -289,9 +154,9 @@
 - (void)compositeColorWithDest:(OGGdkPixbuf*)dest destX:(int)destX destY:(int)destY destWidth:(int)destWidth destHeight:(int)destHeight offsetX:(double)offsetX offsetY:(double)offsetY scaleX:(double)scaleX scaleY:(double)scaleY interpType:(GdkInterpType)interpType overallAlpha:(int)overallAlpha checkX:(int)checkX checkY:(int)checkY checkSize:(int)checkSize color1:(guint32)color1 color2:(guint32)color2;
 
 /**
- * Creates a new pixbuf by scaling `src` to `dest_width` x `dest_height`
- * and alpha blending the result with a checkboard of colors `color1`
- * and `color2`.
+ * Creates a new #GdkPixbuf by scaling @src to @dest_width x
+ * @dest_height and alpha blending the result with a checkboard of colors
+ * @color1 and @color2.
  *
  * @param destWidth the width of destination image
  * @param destHeight the height of destination image
@@ -300,25 +165,24 @@
  * @param checkSize the size of checks in the checkboard (must be a power of two)
  * @param color1 the color of check at upper left
  * @param color2 the color of the other check
- * @return the new pixbuf
+ * @return the new #GdkPixbuf, or %NULL if not enough memory could be
+ * allocated for it.
  */
 - (OGGdkPixbuf*)compositeColorSimpleWithDestWidth:(int)destWidth destHeight:(int)destHeight interpType:(GdkInterpType)interpType overallAlpha:(int)overallAlpha checkSize:(int)checkSize color1:(guint32)color1 color2:(guint32)color2;
 
 /**
- * Creates a new `GdkPixbuf` with a copy of the information in the specified
- * `pixbuf`.
- * 
- * Note that this does not copy the options set on the original `GdkPixbuf`,
+ * Creates a new #GdkPixbuf with a copy of the information in the specified
+ * @pixbuf. Note that this does not copy the options set on the original #GdkPixbuf,
  * use gdk_pixbuf_copy_options() for this.
  *
- * @return A newly-created pixbuf
+ * @return A newly-created pixbuf with a reference count of 1, or %NULL if
+ * not enough memory could be allocated.
  */
 - (OGGdkPixbuf*)copy;
 
 /**
- * Copies a rectangular area from `src_pixbuf` to `dest_pixbuf`.
- * 
- * Conversion of pixbuf formats is done automatically.
+ * Copies a rectangular area from @src_pixbuf to @dest_pixbuf.  Conversion of
+ * pixbuf formats is done automatically.
  * 
  * If the source rectangle overlaps the destination rectangle on the
  * same pixbuf, it will be overwritten during the copy operation.
@@ -335,27 +199,23 @@
 - (void)copyAreaWithSrcX:(int)srcX srcY:(int)srcY width:(int)width height:(int)height destPixbuf:(OGGdkPixbuf*)destPixbuf destX:(int)destX destY:(int)destY;
 
 /**
- * Copies the key/value pair options attached to a `GdkPixbuf` to another
- * `GdkPixbuf`.
- * 
+ * Copy the key/value pair options attached to a #GdkPixbuf to another.
  * This is useful to keep original metadata after having manipulated
  * a file. However be careful to remove metadata which you've already
  * applied, such as the "orientation" option after rotating the image.
  *
- * @param destPixbuf the destination pixbuf
- * @return `TRUE` on success.
+ * @param destPixbuf the #GdkPixbuf to copy options to
+ * @return %TRUE on success.
  */
 - (bool)copyOptions:(OGGdkPixbuf*)destPixbuf;
 
 /**
  * Clears a pixbuf to the given RGBA value, converting the RGBA value into
- * the pixbuf's pixel format.
- * 
- * The alpha component will be ignored if the pixbuf doesn't have an alpha
- * channel.
+ * the pixbuf's pixel format. The alpha will be ignored if the pixbuf
+ * doesn't have an alpha channel.
  *
- * @param pixel RGBA pixel to used to clear (`0xffffffff` is opaque white,
- *   `0x00000000` transparent black)
+ * @param pixel RGBA pixel to clear to
+ *         (0xffffffff is opaque white, 0x00000000 transparent black)
  */
 - (void)fill:(guint32)pixel;
 
@@ -363,8 +223,9 @@
  * Flips a pixbuf horizontally or vertically and returns the
  * result in a new pixbuf.
  *
- * @param horizontal `TRUE` to flip horizontally, `FALSE` to flip vertically
- * @return the new pixbuf
+ * @param horizontal %TRUE to flip horizontally, %FALSE to flip vertically
+ * @return the new #GdkPixbuf, or %NULL
+ * if not enough memory could be allocated for it.
  */
 - (OGGdkPixbuf*)flip:(bool)horizontal;
 
@@ -392,7 +253,7 @@
 /**
  * Queries whether a pixbuf has an alpha channel (opacity information).
  *
- * @return `TRUE` if it has an alpha channel, `FALSE` otherwise.
+ * @return %TRUE if it has an alpha channel, %FALSE otherwise.
  */
 - (bool)hasAlpha;
 
@@ -428,45 +289,44 @@
  * EXIF tag.
  *
  * @param key a nul-terminated string.
- * @return the value associated with `key`
+ * @return the value associated with @key. This is a nul-terminated
+ * string that should not be freed or %NULL if @key was not found.
  */
 - (OFString*)option:(OFString*)key;
 
 /**
- * Returns a `GHashTable` with a list of all the options that may have been
- * attached to the `pixbuf` when it was loaded, or that may have been
- * attached by another function using [method@GdkPixbuf.Pixbuf.set_option].
+ * Returns a #GHashTable with a list of all the options that may have been
+ * attached to the @pixbuf when it was loaded, or that may have been
+ * attached by another function using gdk_pixbuf_set_option().
+ * 
+ * See gdk_pixbuf_get_option() for more details.
  *
- * @return a #GHashTable
- *   of key/values pairs
+ * @return a #GHashTable of key/values
  */
 - (GHashTable*)options;
 
 /**
  * Queries a pointer to the pixel data of a pixbuf.
+ *
+ * @return A pointer to the pixbuf's pixel data.
+ * Please see the section on [image data][image-data] for information
+ * about how the pixel data is stored in memory.
  * 
  * This function will cause an implicit copy of the pixbuf data if the
  * pixbuf was created from read-only data.
- * 
- * Please see the section on [image data](class.Pixbuf.html#image-data) for information
- * about how the pixel data is stored in memory.
- *
- * @return A pointer to the pixbuf's pixel data.
  */
 - (guchar*)pixels;
 
 /**
  * Queries a pointer to the pixel data of a pixbuf.
- * 
- * This function will cause an implicit copy of the pixbuf data if the
- * pixbuf was created from read-only data.
- * 
- * Please see the section on [image data](class.Pixbuf.html#image-data) for information
- * about how the pixel data is stored in memory.
  *
  * @param length The length of the binary data.
  * @return A pointer to the pixbuf's
- * pixel data.
+ * pixel data.  Please see the section on [image data][image-data]
+ * for information about how the pixel data is stored in memory.
+ * 
+ * This function will cause an implicit copy of the pixbuf data if the
+ * pixbuf was created from read-only data.
  */
 - (guchar*)pixelsWithLength:(guint*)length;
 
@@ -486,14 +346,13 @@
 - (int)width;
 
 /**
- * Creates a new pixbuf which represents a sub-region of `src_pixbuf`.
- * 
+ * Creates a new pixbuf which represents a sub-region of @src_pixbuf.
  * The new pixbuf shares its pixels with the original pixbuf, so
  * writing to one affects both.  The new pixbuf holds a reference to
- * `src_pixbuf`, so `src_pixbuf` will not be finalized until the new
+ * @src_pixbuf, so @src_pixbuf will not be finalized until the new
  * pixbuf is finalized.
  * 
- * Note that if `src_pixbuf` is read-only, this function will force it
+ * Note that if @src_pixbuf is read-only, this function will force it
  * to be mutable.
  *
  * @param srcX X coord in @src_pixbuf
@@ -506,10 +365,9 @@
 
 /**
  * Provides a #GBytes buffer containing the raw pixel data; the data
- * must not be modified.
- * 
- * This function allows skipping the implicit copy that must be made
- * if gdk_pixbuf_get_pixels() is called on a read-only pixbuf.
+ * must not be modified.  This function allows skipping the implicit
+ * copy that must be made if gdk_pixbuf_get_pixels() is called on a
+ * read-only pixbuf.
  *
  * @return A new reference to a read-only copy of
  *   the pixel data.  Note that for mutable pixbufs, this function will
@@ -519,20 +377,20 @@
 - (GBytes*)readPixelBytes;
 
 /**
- * Provides a read-only pointer to the raw pixel data.
- * 
- * This function allows skipping the implicit copy that must be made
- * if gdk_pixbuf_get_pixels() is called on a read-only pixbuf.
+ * Provides a read-only pointer to the raw pixel data; must not be
+ * modified.  This function allows skipping the implicit copy that
+ * must be made if gdk_pixbuf_get_pixels() is called on a read-only
+ * pixbuf.
  *
  * @return a read-only pointer to the raw pixel data
  */
 - (const guint8*)readPixels;
 
 /**
- * Removes the key/value pair option attached to a `GdkPixbuf`.
+ * Remove the key/value pair option attached to a #GdkPixbuf.
  *
  * @param key a nul-terminated string representing the key to remove.
- * @return `TRUE` if an option was removed, `FALSE` if not.
+ * @return %TRUE if an option was removed, %FALSE if not.
  */
 - (bool)removeOption:(OFString*)key;
 
@@ -540,28 +398,23 @@
  * Rotates a pixbuf by a multiple of 90 degrees, and returns the
  * result in a new pixbuf.
  * 
- * If `angle` is 0, this function will return a copy of `src`.
+ * If @angle is 0, a copy of @src is returned, avoiding any rotation.
  *
  * @param angle the angle to rotate by
- * @return the new pixbuf
+ * @return the new #GdkPixbuf, or %NULL
+ * if not enough memory could be allocated for it.
  */
 - (OGGdkPixbuf*)rotateSimple:(GdkPixbufRotation)angle;
 
 /**
- * Modifies saturation and optionally pixelates `src`, placing the result in
- * `dest`.
- * 
- * The `src` and `dest` pixbufs must have the same image format, size, and
- * rowstride.
- * 
- * The `src` and `dest` arguments may be the same pixbuf with no ill effects.
- * 
- * If `saturation` is 1.0 then saturation is not changed. If it's less than 1.0,
+ * Modifies saturation and optionally pixelates @src, placing the result in
+ * @dest. @src and @dest may be the same pixbuf with no ill effects.  If
+ * @saturation is 1.0 then saturation is not changed. If it's less than 1.0,
  * saturation is reduced (the image turns toward grayscale); if greater than
- * 1.0, saturation is increased (the image gets more vivid colors).
- * 
- * If `pixelate` is `TRUE`, then pixels are faded in a checkerboard pattern to
- * create a pixelated image.
+ * 1.0, saturation is increased (the image gets more vivid colors). If @pixelate
+ * is %TRUE, then pixels are faded in a checkerboard pattern to create a
+ * pixelated image. @src and @dest must have the same image format, size, and
+ * rowstride.
  *
  * @param dest place to write modified version of @src
  * @param saturation saturation factor
@@ -570,17 +423,14 @@
 - (void)saturateAndPixelateWithDest:(OGGdkPixbuf*)dest saturation:(gfloat)saturation pixelate:(bool)pixelate;
 
 /**
- * Vector version of `gdk_pixbuf_save_to_buffer()`.
- * 
  * Saves pixbuf to a new buffer in format @type, which is currently "jpeg",
- * "tiff", "png", "ico" or "bmp".
- * 
- * See [method@GdkPixbuf.Pixbuf.save_to_buffer] for more details.
+ * "tiff", "png", "ico" or "bmp".  See gdk_pixbuf_save_to_buffer()
+ * for more details.
  *
  * @param buffer location to receive a pointer to the new buffer.
  * @param bufferSize location to receive the size of the new buffer.
  * @param type name of file format.
- * @param optionKeys name of options to set
+ * @param optionKeys name of options to set, %NULL-terminated
  * @param optionValues values for named options
  * @param err
  * @return whether an error was set
@@ -588,20 +438,15 @@
 - (bool)saveToBuffervWithBuffer:(gchar**)buffer bufferSize:(gsize*)bufferSize type:(OFString*)type optionKeys:(char**)optionKeys optionValues:(char**)optionValues err:(GError**)err;
 
 /**
- * Vector version of `gdk_pixbuf_save_to_callback()`.
- * 
  * Saves pixbuf to a callback in format @type, which is currently "jpeg",
- * "png", "tiff", "ico" or "bmp".
- * 
- * If @error is set, `FALSE` will be returned.
- * 
- * See [method@GdkPixbuf.Pixbuf.save_to_callback] for more details.
+ * "png", "tiff", "ico" or "bmp".  If @error is set, %FALSE will be returned. See
+ * gdk_pixbuf_save_to_callback () for more details.
  *
  * @param saveFunc a function that is called to save each block of data that
  *   the save routine generates.
  * @param userData user data to pass to the save function.
  * @param type name of file format.
- * @param optionKeys name of options to set
+ * @param optionKeys name of options to set, %NULL-terminated
  * @param optionValues values for named options
  * @param err
  * @return whether an error was set
@@ -609,57 +454,49 @@
 - (bool)saveToCallbackvWithSaveFunc:(GdkPixbufSaveFunc)saveFunc userData:(gpointer)userData type:(OFString*)type optionKeys:(char**)optionKeys optionValues:(char**)optionValues err:(GError**)err;
 
 /**
- * Saves `pixbuf` to an output stream.
+ * Saves @pixbuf to an output stream.
  * 
  * Supported file formats are currently "jpeg", "tiff", "png", "ico" or
- * "bmp".
- * 
- * See [method@GdkPixbuf.Pixbuf.save_to_stream] for more details.
+ * "bmp". See gdk_pixbuf_save_to_stream() for more details.
  *
- * @param stream a `GOutputStream` to save the pixbuf to
+ * @param stream a #GOutputStream to save the pixbuf to
  * @param type name of file format
- * @param optionKeys name of options to set
+ * @param optionKeys name of options to set, %NULL-terminated
  * @param optionValues values for named options
- * @param cancellable optional `GCancellable` object, `NULL` to ignore
+ * @param cancellable optional #GCancellable object, %NULL to ignore
  * @param err
- * @return `TRUE` if the pixbuf was saved successfully, `FALSE` if an
- *   error was set.
+ * @return %TRUE if the pixbuf was saved successfully, %FALSE if an
+ *     error was set.
  */
 - (bool)saveToStreamvWithStream:(GOutputStream*)stream type:(OFString*)type optionKeys:(char**)optionKeys optionValues:(char**)optionValues cancellable:(GCancellable*)cancellable err:(GError**)err;
 
 /**
- * Saves `pixbuf` to an output stream asynchronously.
+ * Saves @pixbuf to an output stream asynchronously.
  * 
  * For more details see gdk_pixbuf_save_to_streamv(), which is the synchronous
  * version of this function.
  * 
- * When the operation is finished, `callback` will be called in the main thread.
- * 
- * You can then call gdk_pixbuf_save_to_stream_finish() to get the result of
- * the operation.
+ * When the operation is finished, @callback will be called in the main thread.
+ * You can then call gdk_pixbuf_save_to_stream_finish() to get the result of the operation.
  *
- * @param stream a `GOutputStream` to which to save the pixbuf
+ * @param stream a #GOutputStream to which to save the pixbuf
  * @param type name of file format
- * @param optionKeys name of options to set
+ * @param optionKeys name of options to set, %NULL-terminated
  * @param optionValues values for named options
- * @param cancellable optional `GCancellable` object, `NULL` to ignore
- * @param callback a `GAsyncReadyCallback` to call when the pixbuf is saved
+ * @param cancellable optional #GCancellable object, %NULL to ignore
+ * @param callback a #GAsyncReadyCallback to call when the pixbuf is saved
  * @param userData the data to pass to the callback function
  */
 - (void)saveToStreamvAsyncWithStream:(GOutputStream*)stream type:(OFString*)type optionKeys:(gchar**)optionKeys optionValues:(gchar**)optionValues cancellable:(GCancellable*)cancellable callback:(GAsyncReadyCallback)callback userData:(gpointer)userData;
 
 /**
- * Vector version of `gdk_pixbuf_save()`.
- * 
- * Saves pixbuf to a file in `type`, which is currently "jpeg", "png", "tiff", "ico" or "bmp".
- * 
- * If @error is set, `FALSE` will be returned.
- * 
- * See [method@GdkPixbuf.Pixbuf.save] for more details.
+ * Saves pixbuf to a file in @type, which is currently "jpeg", "png", "tiff", "ico" or "bmp".
+ * If @error is set, %FALSE will be returned.
+ * See gdk_pixbuf_save () for more details.
  *
  * @param filename name of file to save.
  * @param type name of file format.
- * @param optionKeys name of options to set
+ * @param optionKeys name of options to set, %NULL-terminated
  * @param optionValues values for named options
  * @param err
  * @return whether an error was set
@@ -673,8 +510,8 @@
  * @dest_height) of the resulting image onto the destination image
  * replacing the previous contents.
  * 
- * Try to use gdk_pixbuf_scale_simple() first; this function is
- * the industrial-strength power tool you can fall back to, if
+ * Try to use gdk_pixbuf_scale_simple() first, this function is
+ * the industrial-strength power tool you can fall back to if
  * gdk_pixbuf_scale_simple() isn't powerful enough.
  * 
  * If the source rectangle overlaps the destination rectangle on the
@@ -695,41 +532,38 @@
 - (void)scaleWithDest:(OGGdkPixbuf*)dest destX:(int)destX destY:(int)destY destWidth:(int)destWidth destHeight:(int)destHeight offsetX:(double)offsetX offsetY:(double)offsetY scaleX:(double)scaleX scaleY:(double)scaleY interpType:(GdkInterpType)interpType;
 
 /**
- * Create a new pixbuf containing a copy of `src` scaled to
- * `dest_width` x `dest_height`.
+ * Create a new #GdkPixbuf containing a copy of @src scaled to
+ * @dest_width x @dest_height. Leaves @src unaffected.  @interp_type
+ * should be #GDK_INTERP_NEAREST if you want maximum speed (but when
+ * scaling down #GDK_INTERP_NEAREST is usually unusably ugly).  The
+ * default @interp_type should be #GDK_INTERP_BILINEAR which offers
+ * reasonable quality and speed.
  * 
- * This function leaves `src` unaffected.
+ * You can scale a sub-portion of @src by creating a sub-pixbuf
+ * pointing into @src; see gdk_pixbuf_new_subpixbuf().
  * 
- * The `interp_type` should be `GDK_INTERP_NEAREST` if you want maximum
- * speed (but when scaling down `GDK_INTERP_NEAREST` is usually unusably
- * ugly). The default `interp_type` should be `GDK_INTERP_BILINEAR` which
- * offers reasonable quality and speed.
+ * If @dest_width and @dest_height are equal to the @src width and height, a
+ * copy of @src is returned, avoiding any scaling.
  * 
- * You can scale a sub-portion of `src` by creating a sub-pixbuf
- * pointing into `src`; see [method@GdkPixbuf.Pixbuf.new_subpixbuf].
- * 
- * If `dest_width` and `dest_height` are equal to the width and height of
- * `src`, this function will return an unscaled copy of `src`.
- * 
- * For more complicated scaling/alpha blending see [method@GdkPixbuf.Pixbuf.scale]
- * and [method@GdkPixbuf.Pixbuf.composite].
+ * For more complicated scaling/alpha blending see gdk_pixbuf_scale()
+ * and gdk_pixbuf_composite().
  *
  * @param destWidth the width of destination image
  * @param destHeight the height of destination image
  * @param interpType the interpolation type for the transformation.
- * @return the new pixbuf
+ * @return the new #GdkPixbuf, or %NULL if not enough memory could be
+ * allocated for it.
  */
 - (OGGdkPixbuf*)scaleSimpleWithDestWidth:(int)destWidth destHeight:(int)destHeight interpType:(GdkInterpType)interpType;
 
 /**
- * Attaches a key/value pair as an option to a `GdkPixbuf`.
- * 
- * If `key` already exists in the list of options attached to the `pixbuf`,
- * the new value is ignored and `FALSE` is returned.
+ * Attaches a key/value pair as an option to a #GdkPixbuf. If @key already
+ * exists in the list of options attached to @pixbuf, the new value is
+ * ignored and %FALSE is returned.
  *
  * @param key a nul-terminated string.
  * @param value a nul-terminated string.
- * @return `TRUE` on success
+ * @return %TRUE on success.
  */
 - (bool)setOptionWithKey:(OFString*)key value:(OFString*)value;
 

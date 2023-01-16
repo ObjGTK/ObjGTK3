@@ -6,8 +6,8 @@
 
 #import "OGTKToolButton.h"
 
-@class OGTKToolItem;
 @class OGTKWidget;
+@class OGTKToolItem;
 
 /**
  * A #GtkMenuToolButton is a #GtkToolItem that contains a button and
@@ -21,11 +21,10 @@
  * 
  * The GtkMenuToolButton implementation of the GtkBuildable interface
  * supports adding a menu by specifying “menu” as the “type” attribute
- * of a `<child>` element.
+ * of a <child> element.
  * 
  * An example for a UI definition fragment with menus:
- * 
- * |[<!-- language="xml" -->
+ * |[
  * <object class="GtkMenuToolButton">
  *   <child type="menu">
  *     <object class="GtkMenu"/>

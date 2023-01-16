@@ -6,8 +6,8 @@
 
 #import "OGTKSocket.h"
 
-#import <OGdk3/OGGdkWindow.h>
 #import "OGTKWidget.h"
+#import <OGdk3/OGGdkWindow.h>
 
 @implementation OGTKSocket
 

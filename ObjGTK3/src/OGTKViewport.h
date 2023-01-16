@@ -6,8 +6,8 @@
 
 #import "OGTKBin.h"
 
-@class OGTKAdjustment;
 @class OGTKWidget;
+@class OGTKAdjustment;
 @class OGGdkWindow;
 
 /**

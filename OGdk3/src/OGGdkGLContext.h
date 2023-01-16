@@ -8,8 +8,8 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGGdkWindow;
 @class OGGdkDisplay;
+@class OGGdkWindow;
 
 /**
  * #GdkGLContext is an object representing the platform-specific

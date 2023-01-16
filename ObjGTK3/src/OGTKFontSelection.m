@@ -6,9 +6,9 @@
 
 #import "OGTKFontSelection.h"
 
-#import "OGTKWidget.h"
-#import <OGPango/OGPangoFontFace.h>
 #import <OGPango/OGPangoFontFamily.h>
+#import <OGPango/OGPangoFontFace.h>
+#import "OGTKWidget.h"
 
 @implementation OGTKFontSelection
 

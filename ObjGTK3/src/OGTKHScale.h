@@ -6,8 +6,8 @@
 
 #import "OGTKScale.h"
 
-@class OGTKWidget;
 @class OGTKAdjustment;
+@class OGTKWidget;
 
 /**
  * The #GtkHScale widget is used to allow the user to select a value using

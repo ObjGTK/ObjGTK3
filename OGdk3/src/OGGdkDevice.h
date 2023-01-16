@@ -8,11 +8,11 @@
 
 #import <OGObject/OGObject.h>
 
+@class OGGdkWindow;
+@class OGGdkDisplay;
 @class OGGdkCursor;
 @class OGGdkSeat;
-@class OGGdkDisplay;
 @class OGGdkScreen;
-@class OGGdkWindow;
 
 /**
  * The #GdkDevice object represents a single input device, such

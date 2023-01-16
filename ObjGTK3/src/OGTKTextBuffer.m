@@ -7,10 +7,10 @@
 #import "OGTKTextBuffer.h"
 
 #import "OGTKTextTagTable.h"
-#import <OGGdkPixbuf/OGGdkPixbuf.h>
-#import "OGTKTextChildAnchor.h"
 #import "OGTKTextTag.h"
+#import <OGGdkPixbuf/OGGdkPixbuf.h>
 #import "OGTKTextMark.h"
+#import "OGTKTextChildAnchor.h"
 #import "OGTKClipboard.h"
 
 @implementation OGTKTextBuffer

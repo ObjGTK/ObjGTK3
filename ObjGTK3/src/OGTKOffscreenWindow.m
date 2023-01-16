@@ -6,8 +6,8 @@
 
 #import "OGTKOffscreenWindow.h"
 
-#import "OGTKWidget.h"
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
+#import "OGTKWidget.h"
 
 @implementation OGTKOffscreenWindow
 

@@ -6,8 +6,8 @@
 
 #import "OGTKRange.h"
 
-@class OGTKAdjustment;
 @class OGTKWidget;
+@class OGTKAdjustment;
 
 /**
  * The #GtkScrollbar widget is a horizontal or vertical scrollbar,

@@ -6,8 +6,8 @@
 
 #import "OGTKToolbar.h"
 
-#import "OGTKToolItem.h"
 #import "OGTKWidget.h"
+#import "OGTKToolItem.h"
 
 @implementation OGTKToolbar
 

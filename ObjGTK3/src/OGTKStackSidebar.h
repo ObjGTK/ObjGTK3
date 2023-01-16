@@ -6,8 +6,8 @@
 
 #import "OGTKBin.h"
 
-@class OGTKStack;
 @class OGTKWidget;
+@class OGTKStack;
 
 /**
  * A GtkStackSidebar enables you to quickly and easily provide a

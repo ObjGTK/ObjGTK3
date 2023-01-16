@@ -7,8 +7,6 @@
 #import "OGAtkObject.h"
 
 /**
- * An AtkObject which purports to implement all ATK interfaces.
- * 
  * An AtkNoOpObject is an AtkObject which purports to implement all
  * ATK interfaces. It is the type of AtkObject which is created if an
  * accessible object is requested for an object type for which no

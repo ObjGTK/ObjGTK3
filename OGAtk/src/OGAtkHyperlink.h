@@ -11,8 +11,6 @@
 @class OGAtkObject;
 
 /**
- * An ATK object which encapsulates a link or set of links in a hypertext document.
- * 
  * An ATK object which encapsulates a link or set of links (for
  * instance in the case of client-side image maps) in a hypertext
  * document.  It may implement the AtkAction interface.  AtkHyperlink

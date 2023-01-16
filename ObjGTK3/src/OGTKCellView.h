@@ -6,8 +6,8 @@
 
 #import "OGTKWidget.h"
 
-@class OGGdkPixbuf;
 @class OGTKCellArea;
+@class OGGdkPixbuf;
 @class OGTKCellAreaContext;
 
 /**

@@ -6,8 +6,8 @@
 
 #import "OGTKBox.h"
 
-@class OGTKWidget;
 @class OGTKRecentManager;
+@class OGTKWidget;
 
 /**
  * #GtkRecentChooserWidget is a widget suitable for selecting recently used

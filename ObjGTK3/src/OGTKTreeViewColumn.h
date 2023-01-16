@@ -11,8 +11,8 @@
 #import <OGObject/OGObject.h>
 
 @class OGTKCellArea;
-@class OGTKCellRenderer;
 @class OGTKWidget;
+@class OGTKCellRenderer;
 
 /**
  * The GtkTreeViewColumn object represents a visible column in a #GtkTreeView widget.

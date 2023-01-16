@@ -6,9 +6,9 @@
 
 #import "OGTKRange.h"
 
-@class OGTKWidget;
-@class OGTKAdjustment;
 @class OGPangoLayout;
+@class OGTKAdjustment;
+@class OGTKWidget;
 
 /**
  * A GtkScale is a slider control used to select a numeric value.
@@ -25,8 +25,8 @@
  * 
  * # GtkScale as GtkBuildable
  * 
- * GtkScale supports a custom `<marks>` element, which can contain multiple
- * `<mark>` elements. The “value” and “position” attributes have the same
+ * GtkScale supports a custom <marks> element, which can contain multiple
+ * <mark> elements. The “value” and “position” attributes have the same
  * meaning as gtk_scale_add_mark() parameters of the same name. If the
  * element is not empty, its content is taken as the markup to show at
  * the mark. It can be translated with the usual ”translatable” and

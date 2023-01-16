@@ -6,14 +6,14 @@
 
 #import "OGTKContainer.h"
 
+@class OGTKTreeSelection;
+@class OGTKTooltip;
 @class OGTKTreeViewColumn;
 @class OGTKCellRenderer;
-@class OGTKTreeSelection;
 @class OGTKEntry;
-@class OGGdkWindow;
-@class OGTKAdjustment;
-@class OGTKTooltip;
 @class OGTKWidget;
+@class OGTKAdjustment;
+@class OGGdkWindow;
 
 /**
  * Widget that displays any object that implements the #GtkTreeModel interface.
@@ -47,12 +47,11 @@
  * # GtkTreeView as GtkBuildable
  * 
  * The GtkTreeView implementation of the GtkBuildable interface accepts
- * #GtkTreeViewColumn objects as `<child>` elements and exposes the internal
+ * #GtkTreeViewColumn objects as <child> elements and exposes the internal
  * #GtkTreeSelection in UI definitions.
  * 
  * An example of a UI definition fragment with GtkTreeView:
- * 
- * |[<!-- language="xml" -->
+ * |[
  * <object class="GtkTreeView" id="treeview">
  *   <property name="model">liststore1</property>
  *   <child>

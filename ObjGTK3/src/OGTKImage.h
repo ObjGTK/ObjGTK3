@@ -10,9 +10,9 @@
 
 #import <OGAtk/OGAtkMisc.h>
 
-@class OGTKWidget;
-@class OGGdkPixbufAnimation;
 @class OGGdkPixbuf;
+@class OGGdkPixbufAnimation;
+@class OGTKWidget;
 
 /**
  * The #GtkImage widget displays an image. Various kinds of object

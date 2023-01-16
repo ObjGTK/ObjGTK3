@@ -6,11 +6,11 @@
 
 #import "OGGdkDevice.h"
 
+#import "OGGdkWindow.h"
+#import "OGGdkDisplay.h"
 #import "OGGdkCursor.h"
 #import "OGGdkSeat.h"
-#import "OGGdkDisplay.h"
 #import "OGGdkScreen.h"
-#import "OGGdkWindow.h"
 
 @implementation OGGdkDevice
 

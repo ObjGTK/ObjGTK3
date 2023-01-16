@@ -6,8 +6,8 @@
 
 #import "OGTKActionGroup.h"
 
-#import "OGTKAccelGroup.h"
 #import "OGTKAction.h"
+#import "OGTKAccelGroup.h"
 
 @implementation OGTKActionGroup
 

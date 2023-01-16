@@ -10,9 +10,9 @@
 
 #import <OGObject/OGObject.h>
 
+@class OGGdkPixbuf;
 @class OGGdkWindow;
 @class OGTKWidget;
-@class OGGdkPixbuf;
 
 /**
  * A #GtkStyle object encapsulates the information that provides the look and

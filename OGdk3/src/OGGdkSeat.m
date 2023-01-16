@@ -6,9 +6,9 @@
 
 #import "OGGdkSeat.h"
 
-#import "OGGdkCursor.h"
-#import "OGGdkDevice.h"
 #import "OGGdkDisplay.h"
+#import "OGGdkDevice.h"
+#import "OGGdkCursor.h"
 #import "OGGdkWindow.h"
 
 @implementation OGGdkSeat

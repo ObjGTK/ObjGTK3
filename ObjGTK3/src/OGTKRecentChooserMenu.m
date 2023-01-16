@@ -6,8 +6,8 @@
 
 #import "OGTKRecentChooserMenu.h"
 
-#import "OGTKRecentManager.h"
 #import "OGTKWidget.h"
+#import "OGTKRecentManager.h"
 
 @implementation OGTKRecentChooserMenu
 

@@ -11,9 +11,6 @@
 @class OGAtkObject;
 
 /**
- * The base object class for a factory used to
- *  create accessible objects for objects of a specific GType.
- * 
  * This class is the base object class for a factory used to create an
  * accessible object for a specific GType. The function
  * atk_registry_set_factory_type() is normally called to store in the

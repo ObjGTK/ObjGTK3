@@ -6,8 +6,8 @@
 
 #import "OGTKColorChooserDialog.h"
 
-#import "OGTKWidget.h"
 #import "OGTKWindow.h"
+#import "OGTKWidget.h"
 
 @implementation OGTKColorChooserDialog
 

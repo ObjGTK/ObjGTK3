@@ -6,8 +6,8 @@
 
 #import "OGTKTooltip.h"
 
-#import <OGdk3/OGGdkDisplay.h>
 #import <OGGdkPixbuf/OGGdkPixbuf.h>
+#import <OGdk3/OGGdkDisplay.h>
 #import "OGTKWidget.h"
 
 @implementation OGTKTooltip

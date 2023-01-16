@@ -10,21 +10,21 @@
 
 #import <OGObject/OGObject.h>
 
-@class OGTKAction;
-@class OGTKWidget;
 @class OGTKAccelGroup;
+@class OGTKAction;
 @class OGTKActionGroup;
+@class OGTKWidget;
 
 /**
- * A #GtkUIManager constructs a user interface (menus and toolbars) from
- * one or more UI definitions, which reference actions from one or more
- * action groups.
- * 
  * > GtkUIManager is deprecated since GTK+ 3.10. To construct user interfaces
  * > from XML definitions, you should use #GtkBuilder, #GMenuModel, et al. To
  * > work with actions, use #GAction, #GtkActionable et al. These newer classes
  * > support richer functionality and integration with various desktop shells.
  * > It should be possible to migrate most/all functionality from GtkUIManager.
+ * 
+ * A #GtkUIManager constructs a user interface (menus and toolbars) from
+ * one or more UI definitions, which reference actions from one or more
+ * action groups.
  * 
  * # UI Definitions # {#XML-UI}
  * 
@@ -86,7 +86,7 @@
  * 
  * # A UI definition #
  * 
- * |[<!-- language="xml" -->
+ * |[
  * <ui>
  *   <menubar>
  *     <menu name="FileMenu" action="FileMenuAction">
@@ -173,7 +173,7 @@
  * 
  * Every action has an accelerator path. Accelerators are installed together
  * with menuitem proxies, but they can also be explicitly added with
- * `<accelerator>` elements in the UI definition. This makes it possible to
+ * <accelerator> elements in the UI definition. This makes it possible to
  * have accelerators for actions even if they have no visible proxies.
  * 
  * # Smart Separators # {#Smart-Separators}
@@ -206,10 +206,10 @@
  * # GtkUIManager as GtkBuildable # {#GtkUIManager-BUILDER-UI}
  * 
  * The GtkUIManager implementation of the GtkBuildable interface accepts
- * GtkActionGroup objects as `<child>` elements in UI definitions.
+ * GtkActionGroup objects as <child> elements in UI definitions.
  * 
  * A GtkUIManager UI definition as described above can be embedded in
- * an GtkUIManager `<object>` element in a GtkBuilder UI definition.
+ * an GtkUIManager <object> element in a GtkBuilder UI definition.
  * 
  * The widgets that are constructed by a GtkUIManager can be embedded in
  * other parts of the constructed user interface with the help of the
@@ -217,7 +217,7 @@
  * 
  * ## An embedded GtkUIManager UI definition
  * 
- * |[<!-- language="xml" -->
+ * |[
  * <object class="GtkUIManager" id="uiman">
  *   <child>
  *     <object class="GtkActionGroup" id="actiongroup">
@@ -307,7 +307,7 @@
 
 /**
  * Parses a string containing a [UI definition][XML-UI] and merges it with
- * the current contents of @manager. An enclosing `<ui>` element is added if
+ * the current contents of @manager. An enclosing <ui> element is added if
  * it is missing.
  *
  * @param buffer the string to parse
@@ -396,10 +396,10 @@
  * Looks up a widget by following a path.
  * The path consists of the names specified in the XML description of the UI.
  * separated by “/”. Elements which don’t have a name or action attribute in
- * the XML (e.g. `<popup>`) can be addressed by their XML element name
+ * the XML (e.g. <popup>) can be addressed by their XML element name
  * (e.g. "popup"). The root element ("/ui") can be omitted in the path.
  * 
- * Note that the widget found by following a path that ends in a `<menu>`;
+ * Note that the widget found by following a path that ends in a <menu>;
  * element is the menuitem to which the menu is attached, not the menu it
  * manages.
  * 
