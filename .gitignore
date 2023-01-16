@@ -141,3 +141,14 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# ObjFW / ObjGTK
+*.m4
+*.cache
+configure
+*.oc
+buildsys.mk
+config.log
+config.status
+extra.mk
+.deps
+*.dep
